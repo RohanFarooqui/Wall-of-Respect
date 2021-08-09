@@ -21,3 +21,17 @@ CREATE TABLE Roles(
     UNIQUE(Name)
 );
 
+/* => Creating User Table */
+CREATE TABLE Users(
+    ID            int NOT NULL AUTO_INCREMENT,
+    Name          Varchar(100),  
+    User_name     VARCHAR(100), 
+    Img_path      VARCHAR(100),
+    Email         Varchar(30),
+    Pswd          CHAR(32),  
+    Status        boolean,
+    /* Constraints */
+    PRIMARY KEY(ID),
+    UNIQUE(User_Name),
+    UNIQUE(Email)
+);
