@@ -66,3 +66,25 @@ CREATE TABLE Campaign(
     PRIMARY KEY(ID),
     UNIQUE(Name)
 );
+
+/* => Creating Associates'Info Table */
+CREATE TABLE Associates_info(
+    ID            int NOT NULL AUTO_INCREMENT,
+    Name          Varchar(100),
+    Designation   Varchar(100),  
+    Description   TEXT, 
+    moti_quote    TEXT,  
+    Img_path      VARCHAR(255),
+    Campaign_id   int,
+    Status        boolean,
+    Added_at      Date,
+    Added_by      INT,
+    Updated_at    Date,
+    Updated_by    INT,
+    /* Constraints */
+    PRIMARY KEY (ID),
+    FOREIGN KEY (Campaign_id) REFERENCES Campaign(ID),
+    FOREIGN KEY (Added_by) REFERENCES Users(ID),
+    FOREIGN KEY (Updated_by) REFERENCES Users(ID),
+    UNIQUE(Name)
+);
