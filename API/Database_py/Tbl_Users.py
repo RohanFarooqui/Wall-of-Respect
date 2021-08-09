@@ -10,6 +10,7 @@ class table_users:
 
     # => Add New User
     def add_user(self,name,U_name,Img_Path,Email,Pswd,Role,Added_by):
+        self.db.ping()
         try:
             part_1  = "CALL `Add_User` (%s,%s,%s,%s,%s,%s,%s)"
             part_2  = (name,U_name,Img_Path,Email,Pswd,Role,Added_by)
@@ -22,6 +23,7 @@ class table_users:
    
     # => View Users
     def view_user(self):
+        self.db.ping()
         try:
             part_1 = "call list_User()"
             self.cur.execute(part_1)
@@ -33,6 +35,7 @@ class table_users:
 
     # => Update User Info
     def update_user_info(self,name,U_name,Img_Path,Email,Role,Status,Updated_by,User_id):
+        self.db.ping()
         try:
             query = "CALL `Update_User_Info`(%s,%s,%s,%s,%s,%s,%s,%s)"
             param = (name,U_name,Img_Path,Email,Role,Status,Updated_by,User_id)
@@ -45,6 +48,7 @@ class table_users:
 
     # => Update User Password
     def update_user_pswd(self,Pswd,Updated_by,User_id):
+        self.db.ping()
         try:
             query = "CALL `Update_User_Password`(%s,%s,%s)"
             param = (Pswd,Updated_by,User_id)
@@ -57,6 +61,7 @@ class table_users:
     
     # => Login Users
     def verify_user(self,user_name,pswd):
+        self.db.ping()
         try:
             query = " SELECT `Verify_login`(%s,%s);"
             param = (user_name,pswd)
@@ -72,6 +77,7 @@ class table_users:
 
     # => Get User Details After Login
     def get_user_details(self,user_name,pswd):
+        self.db.ping()
         try:
             query = " CALL `Get_User_Details`(%s,%s);"
             param = (user_name,pswd)
