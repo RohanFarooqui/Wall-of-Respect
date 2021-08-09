@@ -52,3 +52,17 @@ Create Table Users_Log(
     FOREIGN KEY (Added_by) REFERENCES  Users(ID),
     FOREIGN KEY (Updated_by) REFERENCES  Users(ID)
 );
+
+/* => Creating Campaign Table */
+CREATE TABLE Campaign(
+    ID            int NOT NULL AUTO_INCREMENT,
+    Name          VARCHAR(255),
+    Status        boolean,
+    Added_at      Date,
+    Added_by      INT,
+    Updated_at    Date,
+    Updated_by    INT,    
+    /* Constraints */
+    PRIMARY KEY(ID),
+    UNIQUE(Name)
+);
