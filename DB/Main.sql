@@ -35,3 +35,20 @@ CREATE TABLE Users(
     UNIQUE(User_Name),
     UNIQUE(Email)
 );
+
+/* => Creating User_Log Table */
+Create Table Users_Log(
+    ID            int NOT NULL AUTO_INCREMENT,
+    User_name     VARCHAR(100), 
+    Role          int NOT NULL,
+    Added_at      Date,
+    Added_by      INT,
+    Updated_at    Date,
+    Updated_by    INT, 
+    /* Constraints */
+    PRIMARY KEY(ID),
+    UNIQUE(User_Name),
+    FOREIGN KEY (Role) REFERENCES Roles(ID),
+    FOREIGN KEY (Added_by) REFERENCES  Users(ID),
+    FOREIGN KEY (Updated_by) REFERENCES  Users(ID)
+);
