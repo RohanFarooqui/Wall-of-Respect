@@ -177,3 +177,21 @@ CREATE PROCEDURE Add_User(
             VALUES(User_Name,Role,current_date(),Added_by,current_date(),Added_by);
 END$$
 DELIMITER ;
+
+/* Update  User */
+DELIMITER $$
+CREATE PROCEDURE Update_User_Info (
+            IN Name  Varchar(100),IN User_name VARCHAR(100),IN Img_Path VARCHAR(100),IN Email Varchar(30),
+            IN Role int,IN Status boolean,IN updated_by VARCHAR(100),IN user_id INT)
+BEGIN
+    /* Update to Users Table */
+    UPDATE `users` 
+        SET `Name`=Name,`User_name`=user_name,`Img_path`=Img_Path,`Email`=Email,`Status`= Status 
+            WHERE `ID` = user_id;
+
+    /* Update to User Log */
+    UPDATE `users_log` SET `User_name`=user_name,`Role`=Role,`Updated_at`=current_date(),`Updated_by`=Updated_by
+            WHERE `ID` = user_id;
+
+END$$
+DELIMITER ;
