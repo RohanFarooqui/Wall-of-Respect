@@ -226,3 +226,25 @@ BEGIN
         VALUES (Name,1,current_date(),Added_by,current_date(),Added_by);
 END$$
 DELIMITER ;
+
+/* Update Campaign */
+DELIMITER $$
+CREATE PROCEDURE Update_Campaign ( 
+    IN campaign_name VARCHAR(100),
+    IN Status boolean,
+    IN Updated_by VARCHAR(100),
+    IN camp_id INT
+)
+BEGIN
+    UPDATE `campaign` SET `Name`=campaign_name,`Status`=Status,`Updated_at`= current_date(),`Updated_by`=Updated_by 
+        WHERE `ID` = camp_id; 
+
+    IF Status = 1 THEN
+        UPDATE `associates_info` SET `Status` = 1  WHERE `Campaign_id` = camp_id;
+    ELSE 
+         UPDATE `associates_info` SET `Status`= 0 WHERE `Campaign_id` = camp_id;
+    END IF;
+    
+
+END$$
+DELIMITER ;
