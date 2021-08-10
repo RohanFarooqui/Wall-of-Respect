@@ -101,3 +101,21 @@ ALTER TABLE Roles     ADD FOREIGN KEY (Added_by)   REFERENCES Users(ID);
 ALTER TABLE Roles     ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID);
 
 /*============================>  Procedures <============================*/
+
+/**** => Creating Role Procedures ****/
+
+/* Add Role */
+DELIMITER $$
+CREATE PROCEDURE Add_Role(
+    IN Name           Varchar(100),
+    IN Access_level   Text,
+    IN Added_by       INT
+)
+BEGIN 
+    INSERT INTO `roles`(`Name`, `Access_level`, `Status`, `Added_at`, `Added_by`, `Updated_at`, `Updated_by`)
+        VALUES (Name,Access_level,1,current_date(),Added_by,current_date(),Added_by);
+END$$
+DELIMITER ;
+
+
+
