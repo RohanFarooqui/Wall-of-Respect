@@ -117,5 +117,28 @@ BEGIN
 END$$
 DELIMITER ;
 
+/* Update Role */
+DELIMITER $$
+CREATE PROCEDURE Update_Role ( 
+    IN roll_name VARCHAR(100),
+    IN Access_level Text,
+    IN Status boolean,
+    IN Updated_by INT,
+    IN roll_id INT)
+BEGIN
+    UPDATE `roles` 
+        SET `Name`= Roll_Name,`Access_level`=Access_level,`Updated_at`= current_date(),`Status`=Status,`Updated_by`= Updated_by
+            WHERE `ID` = roll_id; 
+
+    IF Status = 1 THEN
+        UPDATE `users` INNER JOIN `users_log` ON users.ID = users_log.ID SET users.Status = 1 WHERE users_log.Role =  roll_id; 
+    ELSE 
+         UPDATE `users` INNER JOIN `users_log` ON users.ID = users_log.ID SET users.Status = 0 WHERE users_log.Role =  roll_id; 
+    END IF;
+    
+END$$
+DELIMITER ;
+
+
 
 
