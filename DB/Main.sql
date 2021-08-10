@@ -5,7 +5,7 @@ Ceate DATABASE Wall_of_Frame;
 
 Use Wall_of_Fame;
 
-
+/*============================>  Tables <============================*/
 /* => Creating Role Table */
 CREATE TABLE Roles(
     ID            int NOT NULL AUTO_INCREMENT, 
@@ -100,3 +100,4 @@ ALTER TABLE Campaign  ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID);
 ALTER TABLE Roles     ADD FOREIGN KEY (Added_by)   REFERENCES Users(ID); 
 ALTER TABLE Roles     ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID);
 
+/*============================>  Procedures <============================*/
