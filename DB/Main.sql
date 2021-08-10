@@ -248,3 +248,20 @@ BEGIN
 
 END$$
 DELIMITER ;
+
+/* View Campaign */
+DELIMITER $$
+CREATE PROCEDURE list_Campaign ()
+BEGIN
+    SELECT	campaign.ID,
+		campaign.Name,
+        campaign.Status,
+        campaign.Added_at,
+        a.User_name as Added_by , 
+        campaign.Updated_at, 
+        b.User_name as Updated_by 
+    FROM campaign 
+    INNER JOIN users AS a ON campaign.Added_by = a.ID 
+    INNER JOIN users As b ON campaign.Updated_by = b.ID;
+END$$
+DELIMITER ;
