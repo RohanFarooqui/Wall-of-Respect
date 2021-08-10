@@ -268,7 +268,7 @@ DELIMITER ;
 
 /**** => Creating Associates Procedures <= ****/
 
-/* Create Associate */
+/* Add Associate */
 DELIMITER $$
 CREATE PROCEDURE Add_Associate(
     IN Name      Varchar(100),
@@ -283,5 +283,22 @@ CREATE PROCEDURE Add_Associate(
         INSERT INTO `associates_info`(`Name`, `Designation`, `Description`, `moti_quote`, `Img_path`,
                     `Campaign_id`, `Status`, `Added_at`, `Added_by`, `Updated_at`, `Updated_by`)
             VALUES (Name,Designation,Description,moti_quote,Img_Path,Campaign_id,1,current_date(),Added_by,current_date(),Added_by);
+END$$
+DELIMITER ;
+
+/* Update Associate */
+DELIMITER $$
+CREATE PROCEDURE Update_Associate (
+            IN Name  Varchar(100),IN designation Varchar(100),IN descrip TEXT,IN moti_quote TEXT,
+            IN img_path Varchar(225),IN campaign_id INT,IN Status boolean,
+            IN updated_by int, IN assc_id INT)
+BEGIN
+    UPDATE `associates_info` 
+        SET `Name`=Name,`Designation`=designation,`Description`=descrip,`moti_quote`=moti_quote,
+            `Img_path`=img_path,`Campaign_id`=campaign_id,`Status`=Status,
+            `Updated_at`=current_date(),`Updated_by`= updated_by      
+        
+        WHERE `ID` = assc_id;
+
 END$$
 DELIMITER ;
