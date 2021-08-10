@@ -265,3 +265,23 @@ BEGIN
     INNER JOIN users As b ON campaign.Updated_by = b.ID;
 END$$
 DELIMITER ;
+
+/**** => Creating Associates Procedures <= ****/
+
+/* Create Associate */
+DELIMITER $$
+CREATE PROCEDURE Add_Associate(
+    IN Name      Varchar(100),
+    IN Designation Varchar(100),
+    IN Description TEXT,
+    IN moti_quote  TEXT,
+    IN Img_path    VARCHAR(255),
+    IN Campaign_id INT,
+    IN Added_by    INT
+)
+    BEGIN 
+        INSERT INTO `associates_info`(`Name`, `Designation`, `Description`, `moti_quote`, `Img_path`,
+                    `Campaign_id`, `Status`, `Added_at`, `Added_by`, `Updated_at`, `Updated_by`)
+            VALUES (Name,Designation,Description,moti_quote,Img_Path,Campaign_id,1,current_date(),Added_by,current_date(),Added_by);
+END$$
+DELIMITER ;
