@@ -148,8 +148,9 @@ BEGIN
         roles.Updated_at,
         b.User_name as Updated_by
         FROM roles 
-            INNER JOIN users  AS a  ON roles.Added_by = a.ID
-            INNER JOIN users  As b  ON roles.Updated_by = b.ID; 
+        INNER JOIN users  AS a  ON roles.Added_by = a.ID
+        INNER JOIN users  As b  ON roles.Updated_by = b.ID
+        ORDER BY roles.ID ASC;  
 END$$
 DELIMITER ;
 
@@ -213,6 +214,32 @@ BEGIN
 END$$
 DELIMITER ;
 
+/* View User */
+DELIMITER $$
+CREATE PROCEDURE list_User()
+BEGIN 
+    SELECT 
+        users.ID,
+        users.Name  as Name ,
+        users.User_name,
+        users.Img_path,
+        users.Email,
+        users.Pswd,
+        users.Status,
+        roles.Name as Role,
+        users_log.Added_at as Added_at,
+        a.User_name as Added_by,
+        users_log.Updated_at,
+        b.User_name as  Updated_by
+    FROM users
+    INNER JOIN users_log ON users_log.ID = users.ID
+    INNER JOIN roles     ON users_log.Role = roles.ID
+    INNER JOIN users as a ON users_log.Added_by = a.ID
+    INNER JOIN users as b ON users_log.Updated_by = b.ID
+    ORDER BY users.ID ASC;     
+END$$
+DELIMITER ;
+
 /**** => Creating Campaign Procedures <= ****/
 
 /* Add Campaign */
@@ -262,7 +289,8 @@ BEGIN
         b.User_name as Updated_by 
     FROM campaign 
     INNER JOIN users AS a ON campaign.Added_by = a.ID 
-    INNER JOIN users As b ON campaign.Updated_by = b.ID;
+    INNER JOIN users As b ON campaign.Updated_by = b.ID
+    ORDER BY campaign.ID ASC;
 END$$
 DELIMITER ;
 
@@ -322,6 +350,7 @@ BEGIN
     FROM associates_info
     INNER JOIN campaign ON associates_info.Campaign_id = campaign.ID
     INNER JOIN users as a    ON associates_info.Added_by = a.ID
-    INNER JOIN users as b    ON associates_info.Updated_by = b.ID ORDER BY associates_info.ID ASC;   
+    INNER JOIN users as b    ON associates_info.Updated_by = b.ID 
+    ORDER BY associates_info.ID ASC;   
 END$$
 DELIMITER ;
