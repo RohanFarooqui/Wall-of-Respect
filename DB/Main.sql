@@ -139,6 +139,19 @@ BEGIN
 END$$
 DELIMITER ;
 
+/* View Role */
+DELIMITER $$
+CREATE PROCEDURE list_Roll ()
+BEGIN
+    SELECT  roles.ID,roles.Name,roles.Access_level,roles.Status,roles.Added_at,
+        a.User_name as Added_by ,
+        roles.Updated_at,
+        b.User_name as Updated_by
+        FROM roles 
+            INNER JOIN users  AS a  ON roles.Added_by = a.ID
+            INNER JOIN users  As b  ON roles.Updated_by = b.ID; 
+END$$
+DELIMITER ;
 
 
 
