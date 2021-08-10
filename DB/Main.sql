@@ -212,3 +212,17 @@ BEGIN
 
 END$$
 DELIMITER ;
+
+/**** => Creating Campaign Procedures <= ****/
+
+/* Add Campaign */
+DELIMITER $$
+CREATE PROCEDURE Add_Campaign (
+    IN Name           Varchar(100),
+    IN Added_by       INT
+)
+BEGIN 
+    INSERT INTO `campaign`(`Name`, `Status`, `Added_at`, `Added_by`, `Updated_at`, `Updated_by`)
+        VALUES (Name,1,current_date(),Added_by,current_date(),Added_by);
+END$$
+DELIMITER ;
