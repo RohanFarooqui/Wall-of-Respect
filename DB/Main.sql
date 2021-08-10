@@ -302,3 +302,26 @@ BEGIN
 
 END$$
 DELIMITER ;
+
+/* View Associates */
+DELIMITER $$
+CREATE PROCEDURE list_Associates()
+BEGIN 
+    SELECT  associates_info.ID,
+            associates_info.Name as Name ,
+            associates_info.Designation,
+            associates_info.Description,
+            associates_info.moti_quote,
+            associates_info.Img_path,
+            campaign.Name as Campaign,
+            associates_info.Status,
+            associates_info.Added_at,
+            a.User_name as Added_by,
+            associates_info.Updated_at,
+            b.User_name as Updated_by
+    FROM associates_info
+    INNER JOIN campaign ON associates_info.Campaign_id = campaign.ID
+    INNER JOIN users as a    ON associates_info.Added_by = a.ID
+    INNER JOIN users as b    ON associates_info.Updated_by = b.ID ORDER BY associates_info.ID ASC;   
+END$$
+DELIMITER ;
