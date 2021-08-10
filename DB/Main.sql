@@ -102,7 +102,7 @@ ALTER TABLE Roles     ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID);
 
 /*============================>  Procedures <============================*/
 
-/**** => Creating Role Procedures ****/
+/**** => Creating Role Procedures <= ****/
 
 /* Add Role */
 DELIMITER $$
@@ -154,4 +154,26 @@ END$$
 DELIMITER ;
 
 
+/**** => Creating User Procedures <= ****/
 
+/* Add User */
+DELIMITER $$
+CREATE PROCEDURE Add_User(
+    IN Name       Varchar(100),
+    IN User_Name  Varchar(100),
+    IN Img_Path   VARCHAR(100),
+    IN Email      Varchar(100),
+    IN Pswd       CHAR(32),
+    IN Role       INT,
+    IN Added_by   INT
+)
+    BEGIN 
+        /* Insert to Users Table */
+        INSERT INTO `users`(`Name`, `User_name`, `Img_path`, `Email`, `Pswd`, `Status`) 
+            VALUES(Name,User_Name,Img_Path,Email,Pswd,1);
+        
+        /* Insert to User Log */
+        INSERT INTO `users_log`(`User_name`, `Role`,`Added_at`, `Added_by`, `Updated_at`, `Updated_by`)
+            VALUES(User_Name,Role,current_date(),Added_by,current_date(),Added_by);
+END$$
+DELIMITER ;
