@@ -371,3 +371,25 @@ BEGIN
     END IF;
 END$$
 DELIMITER ;
+
+/**** => Get User details after Verification <= ****/
+DELIMITER $$
+CREATE PROCEDURE  Get_User_Details(IN User_Name  Varchar(100),IN Password CHAR(32))
+BEGIN 
+    SELECT 
+        users.ID,
+        users.Name,
+        users.User_name,
+        users.Img_path,
+        users.Email,
+        roles.Access_level as Access_Level
+    FROM users
+    INNER JOIN users_log ON users_log.ID = users.ID
+    INNER JOIN roles     ON users_log.Role = roles.ID
+    INNER JOIN users as a ON users_log.Added_by = a.ID
+    INNER JOIN users as b ON users_log.Updated_by = b.ID
+    
+    WHERE users.User_name = User_Name and users.Pswd = Password and users.Status ;
+            
+END$$
+DELIMITER ;
