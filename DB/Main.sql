@@ -179,6 +179,8 @@ END$$
 DELIMITER ;
 
 /* Update  User */
+
+/* Update  User Account Info */
 DELIMITER $$
 CREATE PROCEDURE Update_User_Info (
             IN Name  Varchar(100),IN User_name VARCHAR(100),IN Img_Path VARCHAR(100),IN Email Varchar(30),
@@ -191,6 +193,21 @@ BEGIN
 
     /* Update to User Log */
     UPDATE `users_log` SET `User_name`=user_name,`Role`=Role,`Updated_at`=current_date(),`Updated_by`=Updated_by
+            WHERE `ID` = user_id;
+
+END$$
+DELIMITER ;
+
+/* Update  User Password */
+DELIMITER $$
+CREATE PROCEDURE Update_User_Password (IN Pswd CHAR(32),IN updated_by VARCHAR(100),IN user_id INT)
+BEGIN
+    /* Update to Users Table */
+    UPDATE `users` SET `Pswd`=Pswd 
+            WHERE `ID` = user_id;
+
+    /* Update to User Log */
+    UPDATE `users_log` SET `Updated_by`=Updated_by
             WHERE `ID` = user_id;
 
 END$$
