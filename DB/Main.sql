@@ -354,3 +354,20 @@ BEGIN
     ORDER BY associates_info.ID ASC;   
 END$$
 DELIMITER ;
+
+
+/*============================>  Functions <============================*/.
+
+/**** => Verify Login <= ****/
+DROP FUNCTION IF EXISTS `Verify_login`;
+DELIMITER $$
+CREATE FUNCTION `Verify_login` (username varchar(100), password CHAR(32)) RETURNS Boolean
+BEGIN
+    IF EXISTS(SELECT * FROM `users` Where `User_name`= username and `Pswd` = password and `Status` )
+    THEN
+      RETURN True;
+    ELSE
+      RETURN False; 
+    END IF;
+END$$
+DELIMITER ;
