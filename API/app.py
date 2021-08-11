@@ -129,6 +129,12 @@ class main:
     def Total_User():
             Result_1 = User(DB_Con_1).Total_User()
             return Result_1
+    
+    ######## => Total Role's Api <= ########
+    @app.route("/v1/total-role",methods=['GET'])
+    def Total_Role():
+            Result_1 = Role(DB_Con_2).Total_Role()
+            return Result_1
 
 
 if __name__ == '__main__':
