@@ -142,6 +142,12 @@ class main:
             Result_1 = Associate(DB_Con_3).Total_Associate()
             return Result_1
 
+    ######## => Total Campaign Api <= ########
+    @app.route("/v1/total-campaign",methods=['GET'])
+    def Total_Campaign():
+            Result_1 = Campaign(DB_Con_4).Total_Campaign()
+            return Result_1
+
 if __name__ == '__main__':
     app.run(debug=True)  ## For Debug
     #app.run()
