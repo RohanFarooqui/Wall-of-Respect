@@ -135,7 +135,12 @@ class main:
     def Total_Role():
             Result_1 = Role(DB_Con_2).Total_Role()
             return Result_1
-
+    
+    ######## => Total Associate's Api <= ########
+    @app.route("/v1/total-associate",methods=['GET'])
+    def Total_Associate():
+            Result_1 = Associate(DB_Con_3).Total_Associate()
+            return Result_1
 
 if __name__ == '__main__':
     app.run(debug=True)  ## For Debug
