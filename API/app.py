@@ -123,8 +123,14 @@ class main:
     def login_user():
         verify_user = Login(DB_Con_1).Login_User()
         return verify_user
+    
+    ######## => Total User's Api <= ########
+    @app.route("/v1/total-user",methods=['GET'])
+    def Total_User():
+            Result_1 = User(DB_Con_1).Total_User()
+            return Result_1
 
-        
+
 if __name__ == '__main__':
     app.run(debug=True)  ## For Debug
     #app.run()
