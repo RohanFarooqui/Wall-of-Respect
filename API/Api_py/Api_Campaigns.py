@@ -7,7 +7,7 @@ from flask import Response
 import hashlib
 
 #=> File Import
-from Database_py.Tbl_Campaign import *
+from Database_py.Tbl_Campaigns import *
 
 #=> Class autheticate role and provide its details
 class Campaign:
