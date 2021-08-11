@@ -13,10 +13,12 @@ import emoji
 # ==> Database Py Files
 from Database_py.Tbl_Users import *
 from Database_py.Tbl_Roles import *
+from Database_py.Tbl_Campaign import *
 
 # ==> Api Py Files
 from Api_py.Api_Users import *
 from Api_py.Api_Roles import *
+from Api_py.Api_Campaign import *
 
 
 
@@ -25,7 +27,7 @@ try:
     DB_Con_1 =  table_users('sql6.freemysqlhosting.net','sql6437945','isxEqZIuys','sql6437945')      
     DB_Con_2 =  table_roles('sql6.freemysqlhosting.net','sql6437945','isxEqZIuys','sql6437945')      
     #DB_Con_3 =  table_associates('sql6.freemysqlhosting.net','sql6437945','isxEqZIuys','sql6437945') 
-    #DB_Con_4 =  table_Campaign('sql6.freemysqlhosting.net','sql6437945','isxEqZIuys','sql6437945')
+    DB_Con_4 =  table_Campaign('sql6.freemysqlhosting.net','sql6437945','isxEqZIuys','sql6437945')
     Database_Status = "Perfect !!"
 except:
     Database_Status = "Connection Error !!"
@@ -81,6 +83,20 @@ class main:
             Result_3 = Role(DB_Con_2).View_Role()
             return Result_3
 
+    ########################### ==> Campaign API  <== ###########################
+
+    ######## => Add , View & Update  <= ########
+    @app.route("/v1/campaign",methods=['GET','POST'])
+    def Campaign():
+        if(request.method == 'POST' and 'Added_by' in request.args):
+            Result_1 = Campaign(DB_Con_4).Add_Campaign()
+            return Result_1
+        elif(request.method == 'POST' and 'Updated_by' in request.args):
+            Result_2 = Campaign(DB_Con_4).Update_Campaign()
+            return Result_2
+        elif(request.method == 'GET'):
+            Result_3 = Campaign(DB_Con_4).View_Campaign()
+            return Result_3
 
 if __name__ == '__main__':
     app.run(debug=True)  ## For Debug
