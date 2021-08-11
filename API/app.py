@@ -116,6 +116,15 @@ class main:
             Result_3 = Campaign(DB_Con_4).View_Campaign()
             return Result_3
 
+    ########################### ==> Other API's   <== ############################
+
+    ######## => User Login API  <= ########
+    @app.route("/v1/login",methods=['POST'])
+    def login_user():
+        verify_user = Login(DB_Con_1).Login_User()
+        return verify_user
+
+        
 if __name__ == '__main__':
     app.run(debug=True)  ## For Debug
     #app.run()
