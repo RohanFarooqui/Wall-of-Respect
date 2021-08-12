@@ -56,3 +56,21 @@ INSERT INTO `campaign` (`ID`, `Name`, `Status`, `Added_at`, `Added_by`, `Updated
 (10, 'EDDY-OB', 1, '2021-08-25', 1, '2021-08-25', 1),
 (11, 'Training Dept.', 1, '2021-08-25', 1, '2021-08-25', 1),
 (12, 'Admin', 1, '2021-08-25', 1, '2021-08-25', 1);
+
+/* ====> Associates <==== */
+INSERT INTO `associates_info` (`ID`, `Name`, `Designation`, `Description`, `moti_quote`, `Img_path`, `Campaign_id`, `Status`, `Added_at`, `Added_by`, `Updated_at`, `Updated_by`) VALUES
+(1, 'MUHAMMAD NAUMAN', 'Not Know', 'It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.', 'It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.', '/Media/25-08-2021%2002%2528%20AM-MUHAMMAD%20.png', 2, 1, '2021-08-25', 1, '2021-09-12', 1),
+(2, 'AMEER HAMZA', 'Not Know', 'Not Know', '   Go an extra mile, it’s never crowded      ', '/Media/25-08-2021%2002%2530%20AM-AMEER%20.png', 1, 1, '2021-08-25', 1, '2021-08-25', 1),
+(3, 'BISMA ANWAR', 'Not Know', 'Not Know', '  Keep your squats low and standards high    ', '/Media/25-08-2021%2003%2526%20AM-BISMA%20.png', 6, 1, '2021-08-25', 1, '2021-08-25', 1),
+(4, 'ABDUL MANNAN', 'Not Know', 'Not Know', '  Strive for progress not perfection    ', '/Media/25-08-2021%2003%2527%20AM-ABDUL%20.png', 7, 1, '2021-08-25', 1, '2021-08-25', 1),
+(5, 'EHSAN UL HAQ', 'Not Know', 'Not Know', '  Quality means doing it right, when no one is looking    ', '/Media/25-08-2021%2003%2530%20AM-EHSAN%20.png', 8, 1, '2021-08-25', 1, '2021-08-25', 1),
+(6, 'HUMAYUN  JAVED', 'Not Know', 'Not Know', ' I don’t know the word quit, either I never did, or I have abolished it  ', '/Media/25-08-2021%2003%2532%20AM-HUMAYUN%20.png', 9, 1, '2021-08-25', 1, '2021-08-25', 1),
+(7, 'ABEER ASLAM', 'Not Know', 'Not Know', ' Success is the sum of small efforts repeated day in and day out  ', '/Media/25-08-2021%2003%2541%20AM-ABEER.png', 10, 1, '2021-08-25', 1, '2021-08-25', 1),
+(8, 'Faizan Jamil  Hashmi', 'Not Know', 'Not Know', '  Blood, sweat and respect, first two you give last one you earn    ', '/Media/25-08-2021%2003%2543%20AM-Faizan%20Jamil%20.png', 5, 1, '2021-08-25', 1, '2021-08-25', 1),
+(9, 'Syed Muhammad Ali', 'Not Know', 'Not Know', ' Minds are like parachutes, they work best when open  ', '/Media/25-08-2021%2003%2545%20AM-Syed%20Muhammad.png', 11, 1, '2021-08-25', 1, '2021-08-25', 1),
+(10, 'Nasir Ali', 'Not Know', 'Not Know', ' There is no substitute for hard work, always be humble & hungry  ', '/Media/25-08-2021%2003%2546%20AM-Nasir%20.png', 12, 1, '2021-08-25', 1, '2021-08-25', 1),
+(11, 'Danyal Mansoor', 'Not Know', 'Not Know', 'Quality is a reflection of you.', '/Media/25-08-2021%2003%2547%20AM-Danyal%20.png', 4, 1, '2021-08-25', 1, '2021-09-12', 1),
+(12, 'Nimra Aleem', 'Not Know', 'Not Know', 'Quality is a reflection of you', '/Media/12-09-2021%2020%2524%20PM-Nimra%20Aleem.png', 2, 1, '2021-09-12', 1, '2021-09-12', 1),
+(13, 'Samiullah Saeed', 'Not Know', 'Not Know', 'There is no substitute for hard work, always be humble & hungry', '/Media/12-09-2021%2020%2524%20PM-Samiullah%20Saeed.png', 1, 1, '2021-09-12', 1, '2021-09-12', 1),
+(14, 'Umaima', 'Not Know', 'Not Know', 'It’s not how far you fall, but how high you bounce that counts', '/Media/12-09-2021%2020%2524%20PM-Umaima.png', 2, 1, '2021-09-12', 1, '2021-09-12', 1),
+(15, 'Zarafshan Yousafzai', 'Not Know', 'Not Know', 'Go an extra mile, it’s never crowded', '/Media/12-09-2021%2020%2524%20PM-Zarafshan%20Yousafzai.png', 2, 1, '2021-09-12', 1, '2021-09-12', 1);
