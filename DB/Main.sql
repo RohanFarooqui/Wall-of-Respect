@@ -1,8 +1,12 @@
 /*=======================================================>  Wall of Respect <=======================================================*/
+
+/* => DROP DB if it is already exists */
 DROP DATABASE If EXISTS Wall_of_Fame ;
 
+/* => Create DB */
 Ceate DATABASE Wall_of_Frame;
 
+/* => Use above created BD */
 Use Wall_of_Fame;
 
 /*============================>  Tables <============================*/
