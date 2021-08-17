@@ -1,0 +1,38 @@
+/********************* Navigation Bar  *********************/
+
+.navbar{
+  padding-top: 30px;
+}
+
+
+/*** Navbar logo ***/
+.logo{
+  max-width: 100%;
+  height:auto;  
+}
+  
+/*** Back To Home Button ***/
+.fab,.back_to_home {
+  color: white;
+}
+
+
+.back_to_home:hover{
+  color: white;
+}
+
+/*** Linkedin Button : Hover ***/
+.fa-linkedin:hover{
+  color:#0077b5;
+}
+
+/*** Facebook Button : Hover ***/
+.fa-facebook:hover{
+    color: #4267B2;
+}
+
+/*** Instagram Button : Hover ***/
+.fa-instagram:hover{
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  border-radius: 40px;
+}
