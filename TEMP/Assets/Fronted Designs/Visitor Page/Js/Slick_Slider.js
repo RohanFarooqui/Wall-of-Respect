@@ -55,15 +55,9 @@ $(document).ready(function () {
 
 
     $slickEl.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-        var i = (currentSlide ? currentSlide : 0) + 1;
+        var i = (currentSlide ? currentSlide :0) + 1;
         $st.text(i + ' of ' + slick.slideCount);
-
-
-        if(currentSlide == null){
-            set_values(1);
-        }
         
-        console.log(currentSlide);
         id_of_Center_img(currentSlide);
 
 
@@ -121,11 +115,10 @@ $(document).ready(function () {
     //-> Featured Image 
     function id_of_Center_img(id) {
         if (id == null) {
-            let id =1;
+            let id =0;
             set_values(id);
         }
         else { 
-            id = id+1;
             set_values(id); 
         }
         /*if (id == null) {
