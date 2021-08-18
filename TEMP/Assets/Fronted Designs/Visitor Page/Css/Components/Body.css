@@ -6,7 +6,7 @@ body{
     
 	  background-size: 400% 400%;
 	  animation: gradient 10s ease infinite;
-    background-image: url('/Img/spotlight.jpg');
+    background-image: url('/Img/assets/spotlight.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
