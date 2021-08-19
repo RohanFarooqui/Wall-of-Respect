@@ -27,3 +27,15 @@ from .Template.Temp_Signout             import*
 from datetime import datetime
 import json
 import os 
+
+###########################-> Templates Render Functions <-#########################
+
+####################-> Index <-####################
+def index(request):
+    index_page = Index(request).Login()
+    session_check = Session(request).Verify_Session()
+    if session_check:
+        return redirect('/Dashboard')
+    else:
+        return render(request,"Index.html")
+    return render(request,"Index.html")
