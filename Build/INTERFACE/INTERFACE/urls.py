@@ -13,9 +13,42 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from INTERFACE import settings
 from django.contrib import admin
 from django.urls import path
 
+#=> My Imports 
+from . import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+
+    ############-> Template's Paths <-############
+    path('',views.index,name='Index'),
+    path('Dashboard/',views.dashboard,name='Dashboard'),
+    path('Associates/',views.associate,name='Associate'),
+    path('Campaign/',views.campaign,name='Campaign'),
+    path('User/',views.user,name='User'),
+    path('Role/',views.role,name='Role'),
+    path('Role Access Details/',views.role_access_details,name='Role Access Details'),
+    path('Signout/', views.sign_out, name='Signout'),
+
+    path('Error/',views.error_404_view,name='Error 404'),
+    ############-> Visitor Page <-############
+    path('Visitor Page',views.visitor_page,name='Visitor Page'),
+
+    #=> For Debug == OFF 
+
+    url(r'^Media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+
+ ]#+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+
+##=> 404 Page Handler
+handler404 = "INTERFACE.views.error_404_view"
+##=> 500 Page Handler
+handler500 = "INTERFACE.views.error_500_view"
+##=> 503 Page Handler
+handler503 = "INTERFACE.views.error_503_view"
+
