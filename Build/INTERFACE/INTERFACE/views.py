@@ -105,3 +105,20 @@ def user(request):
             return redirect('/User',context=User_Data ) 
     else:
         return redirect('/')
+
+####################-> Role <-####################
+def role(request):
+    session_check = Session(request).Verify_Session()
+    if  session_check:
+        Role_page = Role(request).Role_Page()
+        Role_Data = temp_role(request)
+        if(not Role_page):
+            return render(request,'Role.html',context=Role_Data ) 
+        elif(Role_page == "Page Access Not Allowed"):
+            return redirect("/Error")
+        elif(Role_page == "Session Fail"):
+            return redirect('/Signout')
+        else:
+            return redirect('/Role',context=Role_Data ) 
+    else:
+        return redirect('/')
