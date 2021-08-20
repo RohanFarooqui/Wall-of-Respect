@@ -88,3 +88,20 @@ def campaign(request):
             return redirect('/Campaign',context=Campaign_Data ) 
     else:
         return redirect('/')
+
+####################-> User <-####################
+def user(request):
+    session_check = Session(request).Verify_Session()
+    if  session_check:
+        User_page = User(request).User_Page()
+        User_Data = temp_user(request)
+        if(not User_page):
+            return render(request,'User.html',context=User_Data ) 
+        elif( User_page == "Page Access Not Allowed"):
+            return redirect("/Error")
+        elif( User_page == "Session Fail"):
+            return redirect('/Signout')
+        else:
+            return redirect('/User',context=User_Data ) 
+    else:
+        return redirect('/')
