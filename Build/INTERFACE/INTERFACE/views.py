@@ -138,3 +138,23 @@ def role_access_details(request):
             return render(request,'Role Access Level.html',context= Role_access_details_data) 
     else:
         return redirect('/')
+
+
+####################-> Signout  <-####################
+def sign_out(request):
+    Sign_out(request).Create_Log()
+    ##-> Session Flush
+    print(request.session)
+    del request.session['id']
+    del request.session['name'] 
+    del request.session['user_name']
+    del request.session['img']
+    del request.session['email']
+    del request.session['user_access']
+
+    request.session.clear()
+
+    request.session.flush()
+
+    return redirect('Index')
+
