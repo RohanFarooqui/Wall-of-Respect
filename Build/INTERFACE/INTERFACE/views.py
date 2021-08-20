@@ -71,3 +71,20 @@ def associate(request):
             return redirect('/Associates',context=Associate_Data ) 
     else:
         return redirect('/')
+
+####################-> Campaign <-####################
+def campaign(request):
+    session_check = Session(request).Verify_Session()
+    if  session_check:
+        Campaign_page = Campaign(request).Campaign_Page()
+        Campaign_Data = temp_campaign(request)
+        if(not Campaign_page):
+            return render(request,'Campaign.html',context=Campaign_Data ) 
+        elif(Campaign_page == "Page Access Not Allowed"):
+            return redirect("/Error")
+        elif(Campaign_page == "Session Fail"):
+            return redirect('/Signout')
+        else:
+            return redirect('/Campaign',context=Campaign_Data ) 
+    else:
+        return redirect('/')
