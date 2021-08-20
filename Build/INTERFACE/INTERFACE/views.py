@@ -122,3 +122,19 @@ def role(request):
             return redirect('/Role',context=Role_Data ) 
     else:
         return redirect('/')
+
+def role_access_details(request):
+    session_check = Session(request).Verify_Session()
+    if  session_check:
+        Role_access_details_page = Role_Access_Details(request).Role_Access_Page()
+        Role_access_details_data = temp_role_access_details(request)
+        if not Role_access_details_page:
+            return render(request,'Role Access Level.html',context= Role_access_details_data) 
+        elif(Role_access_details_page  == "Page Access Not Allowed"):
+            return redirect("/Error")
+        elif(Role_access_details_page == "Session Fail"):
+            return redirect('/Signout')
+        else:
+            return render(request,'Role Access Level.html',context= Role_access_details_data) 
+    else:
+        return redirect('/')
