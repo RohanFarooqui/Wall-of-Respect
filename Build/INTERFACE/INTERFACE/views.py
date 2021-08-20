@@ -39,3 +39,18 @@ def index(request):
     else:
         return render(request,"Index.html")
     return render(request,"Index.html")
+
+####################-> Dashboard <-####################
+def dashboard(request):
+    session_check = Session(request).Verify_Session()
+    if  session_check:
+        Dashboard_page = Dashboard(request).Dashbord_Page()
+        Dashboard_data = temp_dashboard(request)
+        if Dashboard_page:
+            return render(request,'Dashboard.html',context= Dashboard_data)
+        elif(Dashboard_page == "Session Fail"):
+            return redirect('/Signout')
+        else:
+            return redirect('/Signout')
+    else:
+        return redirect('/')
