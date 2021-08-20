@@ -54,3 +54,20 @@ def dashboard(request):
             return redirect('/Signout')
     else:
         return redirect('/')
+
+####################-> Associate <-####################
+def associate(request):
+    session_check = Session(request).Verify_Session()
+    if  session_check:
+        Associate_page = Associate(request).Associate_Page()
+        Associate_Data = temp_associate(request)
+        if(not Associate_page):
+            return render(request,'Associate.html',context=Associate_Data ) 
+        elif(Associate_page == "Page Access Not Allowed"):
+            return redirect("/Error")
+        elif(Associate_page == "Session Fail"):
+            return redirect('/Signout')
+        else:
+            return redirect('/Associates',context=Associate_Data ) 
+    else:
+        return redirect('/')
