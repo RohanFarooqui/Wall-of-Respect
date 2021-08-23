@@ -169,3 +169,10 @@ def error_500_view(request,*args, **argv):
 ####################-> Error 503  <-####################
 def error_503_view(request,*args, **argv):
     return render(request,"503.html")
+
+
+####################-> Vistor Page  <-####################
+def visitor_page(request):
+    return render(request,'Visitor.html',context=temp_visitor_page())
+
+
