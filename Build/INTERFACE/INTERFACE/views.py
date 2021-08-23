@@ -158,3 +158,6 @@ def sign_out(request):
 
     return redirect('Index')
 
+####################-> Error 404  <-####################
+def error_404_view(request,exception=None):
+    return render(request,"404.html")
