@@ -161,3 +161,7 @@ def sign_out(request):
 ####################-> Error 404  <-####################
 def error_404_view(request,exception=None):
     return render(request,"404.html")
+
+####################-> Error 500  <-####################
+def error_500_view(request,*args, **argv):
+    return render(request,"500.html")
