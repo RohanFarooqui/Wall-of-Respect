@@ -1,0 +1,29 @@
+/*********************  Card 3 : Motivational Quote  *********************/
+.card_3{
+  /*--> Font Settings */
+
+  letter-spacing: 1px;
+
+  /*--> Card Sizing */
+  height:330px; /* height:330px; 60% */
+  width: 67%;  
+  padding-bottom: 50%;
+  
+
+  
+
+  /*--> Card Border */
+  border-radius: 5px;  /* Round borders */
+  border: 1px solid whitesmoke;
+  border-image: linear-gradient(to bottom, whitesmoke, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to left, whitesmoke, rgba(0, 0, 0, 0)) 1 100%;
+  
+
+  /*--> Card Designing */
+  background-color: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);    
+  box-shadow: 0 0 7px #9ecaed;
+ 
+  
+}
