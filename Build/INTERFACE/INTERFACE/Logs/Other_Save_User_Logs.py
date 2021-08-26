@@ -5,7 +5,7 @@ import csv
 import os
 
 #-> File Imports
-from Dashboard.Other.Other_Get_Date_and_Time import * 
+from INTERFACE.Other.Other_Get_Date_and_Time import * 
 
 class Save_User_Logs_History:
 
@@ -45,8 +45,6 @@ class Save_User_Logs_History:
         except:
             pass
                
-
-
     def Write_message(self,msg): 
         if(self.File_exist()):
             with open("Logs\\Crud_Operations\\"+self.File_name, 'a',newline='') as f:
