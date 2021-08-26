@@ -9,10 +9,10 @@ from django.contrib            import messages
 import os
 
 #=> File Import
-from Dashboard.Api.Api_get_data              import * 
-from Dashboard.Api.Api_add_update            import * 
-from Dashboard.Other.Other_Get_Date_and_Time import * 
-from Dashboard.Logs.Other_Save_User_Logs     import *
+from INTERFACE.Api.Api_get_data              import * 
+from INTERFACE.Api.Api_add_update            import * 
+from INTERFACE.Other.Other_Get_Date_and_Time import * 
+from INTERFACE.Logs.Other_Save_User_Logs     import *
 
  
 
@@ -164,7 +164,6 @@ class User(View):
             Session.Delete_Session(self, user_id)
 
             return resp
-
 
         #-> Write Log to csv
         def Write_log_message(self,type,Operation):
