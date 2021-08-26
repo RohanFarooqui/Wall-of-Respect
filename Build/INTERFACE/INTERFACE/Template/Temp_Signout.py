@@ -4,8 +4,8 @@
 from django.views import View
 
 #=> File Import
-from Dashboard.Template.Sessions                       import *
-from Dashboard.Logs.Other_Save_User_Login_out_History  import *
+from INTERFACE.Template.Sessions                       import *
+from INTERFACE.Logs.Other_Save_User_Login_out_History  import *
 
 class Sign_out(View):
         def __init__(self,request):
