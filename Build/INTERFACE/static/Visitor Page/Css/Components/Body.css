@@ -1,0 +1,15 @@
+/********************* Body *********************/
+
+
+body{
+    min-height:100vh; /* else it will move image when click on slider */
+    
+	  background-size: 400% 400%;
+	  animation: gradient 10s ease infinite;
+    background-image: url('../../../../static/Visitor Page/Img/spotlight.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+ 
+    margin: 0;
+  }
