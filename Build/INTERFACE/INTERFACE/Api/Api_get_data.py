@@ -7,7 +7,7 @@ import requests
 import json 
 
 #=> File Import
-from Dashboard.Template.Sessions import *
+from INTERFACE.Template.Sessions import *
 
 #=> Variables
 default_api_url = "https://wall-of-respect-api.herokuapp.com/"#"http://127.0.0.1:5000"
