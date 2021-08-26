@@ -9,9 +9,9 @@ from django.contrib       import messages
 
 
 #=> File Import
-from Dashboard.Api.Api_add_update                      import * 
-from Dashboard.Template.Sessions					   import *
-from Dashboard.Logs.Other_Save_User_Login_out_History  import *
+from INTERFACE.Api.Api_add_update                      import * 
+from INTERFACE.Template.Sessions					   import *
+from INTERFACE.Logs.Other_Save_User_Login_out_History  import *
 
 class Index(View):
 	def __init__(self,request):
@@ -51,7 +51,6 @@ class Index(View):
 		else:
 			return False
 		
-
 	#-> Write Log to csv
 	def Write_log_message(self):
 		try:

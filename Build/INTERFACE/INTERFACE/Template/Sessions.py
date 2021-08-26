@@ -1,6 +1,5 @@
 ##=> Imports
 
-
 #=> Lib Import
 from django.contrib.sessions.models import Session as django_session
 import json
@@ -50,7 +49,6 @@ class Session():
     
     def Get_User_access(self):
         return self.User_access
-
 
     def Delete_Session(self,user_id):      # <---- Delete session if User Account info Update
         id  = []

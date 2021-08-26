@@ -6,8 +6,8 @@ from django.shortcuts     import redirect, render
 from django.views         import View
 
 #=> File Import
-from  Dashboard.Api.Api_get_data import * 
-from  Dashboard.Template.Sessions import *
+from  INTERFACE.Api.Api_get_data import * 
+from  INTERFACE.Template.Sessions import *
 
 class Dashboard(View):
     def __init__(self,request):
@@ -19,12 +19,6 @@ class Dashboard(View):
             return True
         else:
             return "Session Fail"
-        '''result = Session(self.request).Verify_Session()
-        if(result):
-            Dashboard_data = temp_dashboard(self.request)
-            return Dashboard_data
-        else:
-            False'''
 
             
             

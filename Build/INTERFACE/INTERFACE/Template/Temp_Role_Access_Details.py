@@ -6,8 +6,8 @@ from django.shortcuts     import redirect, render
 from django.views         import View
 
 #=> File Import
-from  Dashboard.Api.Api_get_data  import * 
-from  Dashboard.Template.Sessions import *
+from  INTERFACE.Api.Api_get_data  import * 
+from  INTERFACE.Template.Sessions import *
 
 class Role_Access_Details(View):
     def __init__(self,request):

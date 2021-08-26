@@ -9,10 +9,10 @@ from django.contrib            import messages
 import os
 
 #=> File Import
-from Dashboard.Api.Api_get_data              import * 
-from Dashboard.Api.Api_add_update            import * 
-from Dashboard.Other.Other_Get_Role_List     import * 
-from Dashboard.Logs.Other_Save_User_Logs     import *
+from INTERFACE.Api.Api_get_data              import * 
+from INTERFACE.Api.Api_add_update            import * 
+from INTERFACE.Other.Other_Get_Role_List     import * 
+from INTERFACE.Logs.Other_Save_User_Logs     import *
 
 class Role(View):
         def __init__(self,request):
