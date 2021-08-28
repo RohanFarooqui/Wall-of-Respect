@@ -1,0 +1,276 @@
+/********************* Imports *********************/
+/* --> Full Screen */
+@import url(../Media_Queries/MQ_Full_Screen.css);
+
+
+
+
+
+@media only screen and (min-width:0px) and (max-width: 319px) {
+    body{display: none;}
+    .card_1,.card_2,.card_3,.card_4,.fa-caret-square-o-left,.fa-caret-square-o-right{display:none;}
+}
+
+/* 3 Tiles  Consider it Mobile Resolution  */ 
+@media only screen and (min-width:320px) and (max-width: 480px) {
+    
+    body{
+        background: linear-gradient(-45deg,#33457c,#365fdb,#33457c);
+        overflow: visible;
+        background-repeat: no-repeat;
+        background-size: 400% 400%;
+        background-attachment: fixed;
+    }
+
+    .card_1,.card_2,.card_3,.card_4,.fa-caret-square-o-left,.fa-caret-square-o-right{display:none;}
+
+    * { pointer-events: none !important; }
+    
+    .overlay{
+        position: absolute;
+        max-height:1px;
+        margin-bottom: -25px;
+        opacity: 1;
+        background: transparent;
+        color: white;     
+        font-size: 0.7rem;  
+        font-family: 'OpenSans Bold';
+        padding-bottom: -20%;
+
+    } 
+
+    .center{
+        top:210px;
+        position: absolute;
+        padding-left: 0%;
+        padding-right: 7%;
+        
+        display: inline-grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap:5%;
+        grid-row-gap: 5%;
+        
+        
+       
+         
+        -webkit-mask-image:none !important;        
+    }
+
+    .thumbnail{ 
+        object-fit: cover;
+        max-width: 100%; 
+        max-height: 100%;    
+        margin-top: 25px;
+        border: 2px solid whitesmoke;
+        box-shadow: 0 0 7px #9ecaed;
+        filter: grayscale(100%);  
+        opacity: 1;
+    }
+     
+    .select{
+        font-family: 'Athena Unicode';
+        position: absolute;
+        top:150px;
+    }
+
+     
+
+}
+
+/* 5 Tiles Consider it Low Tablet Resolution */
+@media only screen and (min-width:481px) and (max-width: 767px) {
+    
+    body{
+        background: linear-gradient(-45deg,#33457c,#365fdb,#33457c);
+        overflow: visible;
+        background-repeat: no-repeat;
+        background-size: 400% 400%;
+        background-attachment: fixed;
+    }
+
+    .card_1,.card_2,.card_3,.card_4,.fa-caret-square-o-left,.fa-caret-square-o-right{display:none;}
+
+    * { pointer-events: none !important; }
+    
+    .overlay{
+        position: absolute;
+        max-height:1px;
+        margin-bottom: -25px;
+        opacity: 1;
+        background: transparent;
+        color: white;     
+        font-size: 0.8rem;  
+        font-family: 'OpenSans Bold';
+ 
+        padding-bottom: -20%;
+    
+ 
+    } 
+
+    .center{
+        top:150px;
+        position: absolute;
+        padding-left: 0%;
+        padding-right: 7%;
+        display: inline-grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap:5%;
+        grid-row-gap: 5%;
+        -webkit-mask-image:none !important;        
+    }
+
+    .thumbnail{ 
+        object-fit: cover;
+        max-width: 100%; 
+        max-height: 100%;    
+        margin-top: 25px;
+        border: 2px solid whitesmoke;
+        box-shadow: 0 0 7px #9ecaed;
+        filter: grayscale(100%); 
+        opacity: 0.9; 
+    }
+     
+    .select{
+        font-family: 'Athena Unicode';
+        position: absolute;
+        top:100px;
+    }
+
+     
+
+}
+
+/* 7 Tiles Consider it High Tablet Resolution */
+@media only screen and (min-width:768px) and (max-width:1099px) {
+    
+    body{
+        background: linear-gradient(-45deg,#33457c,#365fdb,#33457c);
+        overflow: visible;
+        background-repeat: no-repeat;
+        background-size: 400% 400%;
+        background-attachment: fixed;
+    }
+
+    .card_1,.card_2,.card_3,.card_4,.fa-caret-square-o-left,.fa-caret-square-o-right{display:none;}
+
+    * { pointer-events: none !important; }
+    
+    .overlay{
+        position: absolute;
+        max-height:1px;
+        margin-bottom: -25px;
+        opacity: 1;
+        background: transparent;
+        color: white;     
+        font-size: 0.8rem;  
+        font-family: 'OpenSans Bold';
+ 
+        padding-bottom: -20%;
+    
+ 
+    } 
+
+    .center{
+        top:150px;
+        position: absolute;
+        padding-left: 0%;
+        padding-right: 7%;
+        display: inline-grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-column-gap:5%;
+        grid-row-gap: 5%;
+        -webkit-mask-image:none !important;        
+    }
+
+    .thumbnail{ 
+        object-fit: cover;
+        max-width: 100%; 
+        max-height: 100%;    
+        margin-top: 25px;
+        border: 2px solid whitesmoke;
+        box-shadow: 0 0 7px #9ecaed;
+        filter: grayscale(100%); 
+        opacity: 0.9; 
+    }
+     
+    .select{
+        font-family: 'Athena Unicode';
+        position: absolute;
+        top:100px;
+    }
+
+     
+
+}
+
+
+@media only screen and (min-width: 1100px) and (max-width: 1919px) {
+    .card_1{
+        height: 375px; /* 80% */
+    }
+
+    .card_2 img{
+        margin-right: 5%; /*5% */
+    }
+
+    .card_3{
+        height: 280px; /* 50% */
+    }
+
+    .card_4{
+        height:85px;
+    }
+    .featured{
+        max-width: 400px; 
+    }
+    .smoke{
+        padding-right: 20%;
+        margin-top: -30%;
+    }
+    .container{
+        margin-top: -0.5%;
+    }
+     
+    
+   
+
+     
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
