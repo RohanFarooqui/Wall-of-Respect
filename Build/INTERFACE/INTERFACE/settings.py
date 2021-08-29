@@ -167,5 +167,3 @@ MESSAGE_TAGS = {
     messages.ERROR:    'alert-fill-danger',
 }
 
-#admin
-#wallofrespect123
