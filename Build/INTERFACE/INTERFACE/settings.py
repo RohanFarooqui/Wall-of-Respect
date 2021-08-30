@@ -24,11 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-(7q4myj2*odf)yv!ugn)-lqk8s@a*m-csxg8zn11twgk_!2ihf'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG =  True ## Must False when in Build
 
-ALLOWED_HOSTS = ["localhost", "192.168.10.2","127.0.0.1","192.168.10.3","remotedesktop.freeddns.org"]
-#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["localhost", "192.168.10.2","127.0.0.1","192.168.10.3","remotedesktop.freeddns.org"] # Default => ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
