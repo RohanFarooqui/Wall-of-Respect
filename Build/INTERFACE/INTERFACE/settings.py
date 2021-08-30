@@ -32,7 +32,6 @@ DEBUG =  True ## Must False when in Build
 ALLOWED_HOSTS = ["localhost", "192.168.10.2","127.0.0.1","192.168.10.3","remotedesktop.freeddns.org"] # Default => ALLOWED_HOSTS = ['*']
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -60,7 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR,'templates')
+                os.path.join(BASE_DIR,'templates')
             ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -76,7 +75,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'INTERFACE.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -86,7 +84,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -124,31 +121,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-'''STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-        os.path.join(BASE_DIR,'static'),
-        
-]
-
-MEDIA_URL  = '/Media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'Media')'''
-
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
-  
 
 if DEBUG:
-
-  STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-  STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-  
 MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
 
 # Default primary key field type
@@ -158,9 +140,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-# Messgae Tags 
-
-
+# ALERT Messgae Tags 
 MESSAGE_TAGS = {
     messages.DEBUG:    'alert-fill-info',
     messages.INFO:     'alert-fill-info',
