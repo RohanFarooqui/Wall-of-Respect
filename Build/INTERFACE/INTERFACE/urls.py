@@ -39,6 +39,7 @@ urlpatterns = [
     path('Signout/', views.sign_out, name='Signout'),
 
     path('Error/',views.error_404_view,name='Error 404'),
+    
     ############-> Visitor Page <-############
     path('Visitor Page',views.visitor_page,name='Visitor Page'),
 
