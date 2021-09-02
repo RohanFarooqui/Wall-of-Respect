@@ -1,0 +1,40 @@
+
+/*Minimum Height : 768 */
+@media (height: 768px)   {
+    .featured{
+        max-width: 70%;
+    }
+}
+
+/*Minimum Height : 900 */
+@media (height: 900px)   {
+    .featured{
+        max-width: 70%;
+    }
+}
+
+/*Minimum Height : 1080 */
+ @media (min-height: 1080px){
+    .card_1{
+        height: 550px;  
+        font-size: 1.2rem;
+    }
+    .card_3{
+        height: 350px;
+        font-size: 1.1rem;
+    }
+    .card_4{
+        height: 100px;
+    }
+
+    .featured{
+        max-width: 70%;
+    }
+
+    .bottom{
+        font-size: 180%;
+    }
+    .container{
+        margin-top: -5%;
+    }
+}
