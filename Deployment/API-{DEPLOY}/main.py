@@ -147,5 +147,4 @@ class main:
 
 #=> Main 
 if __name__ == '__main__':
-    app.run(debug=True)  ##For Debug
-    #app.run()
+    app.run()
