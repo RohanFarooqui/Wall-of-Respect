@@ -1,3 +1,3 @@
 #!/bin/sh
 cd API
-python main.py
+python app.py
