@@ -1,0 +1,672 @@
+{
+	"info": {
+		"_postman_id": "89f02cf0-1ade-4bf0-8ce6-8ca6fc2b3cbc",
+		"name": "Wall of Respect Digitization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Add/User?f_name=Test&l_name=Test&u_name=Test12311&img_path=Test12311&email=Test1111&pswd=Test111111&role=1&added_by=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Add",
+						"User"
+					],
+					"query": [
+						{
+							"key": "f_name",
+							"value": "Test"
+						},
+						{
+							"key": "l_name",
+							"value": "Test"
+						},
+						{
+							"key": "u_name",
+							"value": "Test12311"
+						},
+						{
+							"key": "img_path",
+							"value": "Test12311"
+						},
+						{
+							"key": "email",
+							"value": "Test1111"
+						},
+						{
+							"key": "pswd",
+							"value": "Test111111"
+						},
+						{
+							"key": "role",
+							"value": "1"
+						},
+						{
+							"key": "added_by",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Add/Role?role_name=Test_2&role_access={\"add_user\": \"No\", \"delete_user\" : \"No\", \"update_user\" : \"No\",\"add_associate\":\"No\",\"delete_associate\":\"No\", \"update_associate\":\"No\"}&added_by=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Add",
+						"Role"
+					],
+					"query": [
+						{
+							"key": "role_name",
+							"value": "Test_2"
+						},
+						{
+							"key": "role_access",
+							"value": "{\"add_user\": \"No\", \"delete_user\" : \"No\", \"update_user\" : \"No\",\"add_associate\":\"No\",\"delete_associate\":\"No\", \"update_associate\":\"No\"}"
+						},
+						{
+							"key": "added_by",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Associate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Add/Associate?f_name=Test&l_name=Test&descrip=Test&quote=Test&img_path=Test&campaign=2&added_by=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Add",
+						"Associate"
+					],
+					"query": [
+						{
+							"key": "f_name",
+							"value": "Test"
+						},
+						{
+							"key": "l_name",
+							"value": "Test"
+						},
+						{
+							"key": "descrip",
+							"value": "Test"
+						},
+						{
+							"key": "quote",
+							"value": "Test"
+						},
+						{
+							"key": "img_path",
+							"value": "Test"
+						},
+						{
+							"key": "campaign",
+							"value": "2"
+						},
+						{
+							"key": "added_by",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Campaign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Add/Campaign?camp_name=Test&added_by=admin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Add",
+						"Campaign"
+					],
+					"query": [
+						{
+							"key": "camp_name",
+							"value": "Test"
+						},
+						{
+							"key": "added_by",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:5000/View/User"
+			},
+			"response": []
+		},
+		{
+			"name": "View Associate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:5000/View/Associates"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Update/User?f_name=Test1&l_name=Test1&u_name=Test1&img_path=Test1&email=Test1@gmail.com&pswd=1234&role=2&status=1&updated_by=2&user_id=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Update",
+						"User"
+					],
+					"query": [
+						{
+							"key": "f_name",
+							"value": "Test1"
+						},
+						{
+							"key": "l_name",
+							"value": "Test1"
+						},
+						{
+							"key": "u_name",
+							"value": "Test1"
+						},
+						{
+							"key": "img_path",
+							"value": "Test1"
+						},
+						{
+							"key": "email",
+							"value": "Test1@gmail.com"
+						},
+						{
+							"key": "pswd",
+							"value": "1234"
+						},
+						{
+							"key": "role",
+							"value": "2"
+						},
+						{
+							"key": "status",
+							"value": "1"
+						},
+						{
+							"key": "updated_by",
+							"value": "2"
+						},
+						{
+							"key": "user_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Update/Role?role_name=Test&role_access={Test}&updated_by=1&roll_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Update",
+						"Role"
+					],
+					"query": [
+						{
+							"key": "role_name",
+							"value": "Test"
+						},
+						{
+							"key": "role_access",
+							"value": "{Test}"
+						},
+						{
+							"key": "updated_by",
+							"value": "1"
+						},
+						{
+							"key": "roll_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Associates",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Update/Associate?f_name=Test&l_name=Test&descrip=Test3324235&quote=Test&campaign_id=1&status=1&updated_by=1&assc_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Update",
+						"Associate"
+					],
+					"query": [
+						{
+							"key": "f_name",
+							"value": "Test"
+						},
+						{
+							"key": "l_name",
+							"value": "Test"
+						},
+						{
+							"key": "descrip",
+							"value": "Test3324235"
+						},
+						{
+							"key": "quote",
+							"value": "Test"
+						},
+						{
+							"key": "campaign_id",
+							"value": "1"
+						},
+						{
+							"key": "status",
+							"value": "1"
+						},
+						{
+							"key": "updated_by",
+							"value": "1"
+						},
+						{
+							"key": "assc_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Campaign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Update/Campaign?campaign_name=Test&updated_by=2&campaign_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Update",
+						"Campaign"
+					],
+					"query": [
+						{
+							"key": "campaign_name",
+							"value": "Test"
+						},
+						{
+							"key": "updated_by",
+							"value": "2"
+						},
+						{
+							"key": "campaign_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Show/User?user_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Show",
+						"User"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Show/Role?role_id=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Show",
+						"Role"
+					],
+					"query": [
+						{
+							"key": "role_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Associate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Show/Associate?assc_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Show",
+						"Associate"
+					],
+					"query": [
+						{
+							"key": "assc_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Campaign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Show/Campaign?camp_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Show",
+						"Campaign"
+					],
+					"query": [
+						{
+							"key": "camp_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hide User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Hide/User?user_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Hide",
+						"User"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hide Role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Hide/Role?role_id=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Hide",
+						"Role"
+					],
+					"query": [
+						{
+							"key": "role_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hide Associate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Hide/Associate?assc_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Hide",
+						"Associate"
+					],
+					"query": [
+						{
+							"key": "assc_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hide Campaign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/Hide/Campaign?camp_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Hide",
+						"Campaign"
+					],
+					"query": [
+						{
+							"key": "camp_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/login/user?user_name=admin&password=1234",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login",
+						"user"
+					],
+					"query": [
+						{
+							"key": "user_name",
+							"value": "admin"
+						},
+						{
+							"key": "password",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
