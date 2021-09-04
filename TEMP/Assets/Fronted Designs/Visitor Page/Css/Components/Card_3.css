@@ -8,6 +8,7 @@
   height:330px; /* height:330px; 60% */
   width: 67%;  
   padding-bottom: 50%;
+  overflow-y: hidden;
   
 
   
@@ -20,10 +21,55 @@
   
 
   /*--> Card Designing */
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: rgba(255, 255, 255, 0.06); 
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);    
   box-shadow: 0 0 7px #9ecaed;
- 
+
+}
+
+/********************* Scroll Bar  *********************/
+
+
+/*** Scrollbar ***/
+.scroll_2{
+  position:absolute;
+  max-height: 250px;
+  overflow-y:auto;
+  padding-right: 5px;
+  visibility: visible;
+}
+
+/*** Visible Scroll on Hover ***/
+.scroll_2:hover{
+  visibility: visible;
+}
+
+
+/*** Scrollbar : Track ***/
+.scroll_2::-webkit-scrollbar-track
+{
+
+  background-color: #AACAEE;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+/*** Scrollbar : Bar  ***/
+.scroll_2::-webkit-scrollbar
+{
+  width: 3px;
+  background-color: #F5F5F5;
+}
   
+/*** Scrollbar : Thumb  ***/
+.scroll_2::-webkit-scrollbar-thumb
+{
+  background-color: #AACAEF;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, .2) 50%,
+    rgba(255, 255, 255, .2) 75%,
+    transparent 75%,
+    transparent)
 }
