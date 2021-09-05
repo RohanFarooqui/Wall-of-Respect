@@ -58,6 +58,8 @@ $(document).ready(function () {
         var i = (currentSlide ? currentSlide :0) + 1;
         $st.text(i + ' of ' + slick.slideCount);
         
+        console.log(currentSlide);
+
         id_of_Center_img(currentSlide);
 
 
@@ -75,6 +77,7 @@ $(document).ready(function () {
         infinite: true,
         prevArrow: false,
         nextArrow: false,
+        mobileFirst: false,
         responsive: [
             {
                 breakpoint: 1100,
@@ -121,30 +124,34 @@ $(document).ready(function () {
         else { 
             set_values(id); 
         }
-        /*if (id == null) {
-            let id = 1;
-            set_values(id);
-        }
-        else { 
-
-            console.log(id);
-        set_values(id); }*/
     }
 
-    /*window.addEventListener("resize", function (event) {
+    //=> Event Listener Check Browser Size Continously
+    /*window.addEventListener("resize", function () {
         if ($(document).width() < 1100) {
-            $('.center').slick("unslick");
+            $slickEl.slick("unslick");
             console.log("FF");
         }
         else {
+            $slickEl.slick("slick");
             console.log("ON");
-
-
-
         }
+    });
 
-
+    //-> Check Size of Screen on Load
+    window.addEventListener('load', function() {
+        if ($(document).width() < 1101) {
+            $slickEl.slick("unslick");
+            console.log("FF "+$(document).width());
+        }
+        else {
+            $slickEl.slick("slick");
+            console.log("ON");
+        }        
+        
     });*/
+    
+    
 
 
 });
