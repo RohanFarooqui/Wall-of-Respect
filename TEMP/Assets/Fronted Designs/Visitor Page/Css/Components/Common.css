@@ -13,9 +13,8 @@
   color             : white;
   font-size         : 0.9em;
   font-size         : 0.75vw;
-  text-align: center;
+  text-align        : center;
   margin-top        : 2.5%;   
-  margin-left: auto;
   -webkit-animation : fadein 2s;
   visibility:visible;
 }

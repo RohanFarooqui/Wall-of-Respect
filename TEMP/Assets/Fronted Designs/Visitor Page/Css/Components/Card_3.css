@@ -34,10 +34,12 @@
 /*** Scrollbar ***/
 .scroll_2{
   position:absolute;
-  max-height: 250px;
+  max-height: 240px;
   overflow-y:auto;
   padding-right: 5px;
-  visibility: visible;
+  visibility: hidden;
+  margin-left: -10px;
+  margin-right: 5px;
 }
 
 /*** Visible Scroll on Hover ***/

@@ -10,6 +10,7 @@
   max-width: 78%;
   margin-left:31%;
   overflow-y: hidden;
+  
  
 
   /*--> Card Border */
@@ -58,9 +59,11 @@
 /*** Scrollbar ***/
 .scroll_1{
   position:absolute;
-  max-height: 390px;
+  max-height: 392px;
   overflow-y:auto;
   visibility: hidden;
+  margin-left: -10px;
+  margin-right: 8px;
  
 }
 

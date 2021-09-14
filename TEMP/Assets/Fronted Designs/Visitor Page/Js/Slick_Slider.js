@@ -70,7 +70,7 @@ $(document).ready(function () {
         centerPadding: '100px',
         slidesToShow: 9,
         focusOnSelect: true,
-        autoplay:true,
+        autoplay:false, /*true*/
         autoplaySpeed:6000,
         pauseOnHover: true,
         dots: false,
