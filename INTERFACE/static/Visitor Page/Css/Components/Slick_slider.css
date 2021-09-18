@@ -20,7 +20,8 @@
 .overlay{
   /*--> Font Settings */
   font-family: 'OpenSans Bold';
-  font-size:0.8rem;
+  /*font-size:0.8rem;*/
+  font-size : 0.65vw;
   color: white;
   opacity:0;
   text-overflow: ellipsis;
@@ -33,6 +34,8 @@
   height: 10%;  
   bottom: 0; 
   position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
   
   
   /* Anuimation */

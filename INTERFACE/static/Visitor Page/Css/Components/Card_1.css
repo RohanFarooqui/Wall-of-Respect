@@ -10,6 +10,7 @@
   max-width: 78%;
   margin-left:31%;
   overflow-y: hidden;
+  
  
 
   /*--> Card Border */
@@ -22,8 +23,7 @@
   background-color: rgba(255, 255, 255, 0.06); 
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 7px #9ecaed;
-  
+  box-shadow: 0 0 7px #9ecaed;  
 }
 
 
@@ -36,6 +36,7 @@
   font:bold;
   font-weight: 900;  
   color: white;
+  visibility:visible;
 
   /*--> Animation  */
   -webkit-animation: fadein 2s;
@@ -55,33 +56,45 @@
 /********************* Scroll Bar  *********************/
 
 
-/*** Scrollbar : Hover ***/
-.scroll_1:hover
-{
-  position:static;
-  max-height: 410px;
+/*** Scrollbar ***/
+.scroll_1{
+  position:absolute;
+  max-height: 392px;
   overflow-y:auto;
+  visibility: hidden;
+  margin-left: -10px;
+  margin-right: 8px;
+ 
+}
+
+/*** Visible Scroll on Hover ***/
+.scroll_1:hover{
+  visibility: visible;
   
 }
   
 /*** Scrollbar : Track ***/
 .scroll_1::-webkit-scrollbar-track
 {
-  background-color: #F5F5F5;
+
+  background-color: #AACAEE;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 
-/*** Scrollbar : Bar ***/
+/*** Scrollbar : Bar  ***/
 .scroll_1::-webkit-scrollbar
 {
+
   width: 3px;
   background-color: #F5F5F5;
+ 
 }
   
-/*** Scrollbar : Thumb ***/
+/*** Scrollbar : Thumb  ***/
 .scroll_1::-webkit-scrollbar-thumb
 {
-  background-color: rgb(238, 202, 149);	
+ 
+  background-color: #AACAEF;
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%,
     transparent 25%,
     transparent 50%,

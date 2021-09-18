@@ -3,9 +3,7 @@
 @import url(../Media_Queries/MQ_Full_Screen.css);
 
 
-
-
-
+/* None */
 @media only screen and (min-width:0px) and (max-width: 319px) {
     body{display: none;}
     .card_1,.card_2,.card_3,.card_4,.fa-caret-square-o-left,.fa-caret-square-o-right{display:none;}
@@ -33,14 +31,18 @@
         opacity: 1;
         background: transparent;
         color: white;     
-        font-size: 0.7rem;  
+        font-size: 3vw; 
         font-family: 'OpenSans Bold';
+        padding-left: 0px;
+        padding-right: 0px;
+         
+        
         padding-bottom: -20%;
 
     } 
 
     .center{
-        top:210px;
+        top:170px;
         position: absolute;
         padding-left: 0%;
         padding-right: 7%;
@@ -49,10 +51,7 @@
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap:5%;
         grid-row-gap: 5%;
-        
-        
-       
-         
+    
         -webkit-mask-image:none !important;        
     }
 
@@ -71,6 +70,10 @@
         font-family: 'Athena Unicode';
         position: absolute;
         top:150px;
+    }
+
+    .footer{
+        display: none;
     }
 
      
@@ -162,7 +165,7 @@
         opacity: 1;
         background: transparent;
         color: white;     
-        font-size: 0.8rem;  
+        font-size: 0.9vw;   
         font-family: 'OpenSans Bold';
  
         padding-bottom: -20%;

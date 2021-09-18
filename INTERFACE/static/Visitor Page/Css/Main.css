@@ -34,7 +34,8 @@
 /* -> Media Queries */
 @import url(Media_Queries/MQ_Main.css);
 
-
+/* -> Footer */
+@import url(Components/Footer.css);
 
 
 /*** Bottom "Wall of Respect" Tag with Prev & Next Button ***/

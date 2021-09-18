@@ -2,6 +2,14 @@ $(document).ready(function () {
 
     //-> Set Values
     function set_values(id) {
+
+        //->  Remove & Set Smoke 
+        let smoke_path ="../static/Visitor Page/Img/smoke.png";
+        $('#smoke').fadeOut(250, function(){
+            $('#smoke').attr("src",smoke_path);
+            $('#smoke').fadeIn(250);
+        });
+
         //->  Get & Set Image 
         let img_path = document.getElementById(id).src;
         $('#featured').fadeOut(500, function() {
@@ -55,15 +63,13 @@ $(document).ready(function () {
 
 
     $slickEl.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-        var i = (currentSlide ? currentSlide : 0) + 1;
+        var i = (currentSlide ? currentSlide :0) + 1;
         $st.text(i + ' of ' + slick.slideCount);
-
-
+        
         if(currentSlide == null){
             set_values(1);
         }
-        
-        console.log(currentSlide);
+
         id_of_Center_img(currentSlide);
 
 
@@ -74,13 +80,14 @@ $(document).ready(function () {
         centerPadding: '100px',
         slidesToShow: 9,
         focusOnSelect: true,
-        autoplay:true,
+        autoplay:false, /*true*/
         autoplaySpeed:6000,
         pauseOnHover: true,
         dots: false,
         infinite: true,
         prevArrow: false,
         nextArrow: false,
+        mobileFirst: false,
         responsive: [
             {
                 breakpoint: 1100,
@@ -128,30 +135,34 @@ $(document).ready(function () {
             id = id+1;
             set_values(id); 
         }
-        /*if (id == null) {
-            let id = 1;
-            set_values(id);
-        }
-        else { 
-
-            console.log(id);
-        set_values(id); }*/
     }
 
-    /*window.addEventListener("resize", function (event) {
+    //=> Event Listener Check Browser Size Continously
+    /*window.addEventListener("resize", function () {
         if ($(document).width() < 1100) {
-            $('.center').slick("unslick");
+            $slickEl.slick("unslick");
             console.log("FF");
         }
         else {
+            $slickEl.slick("slick");
             console.log("ON");
-
-
-
         }
+    });
 
-
+    //-> Check Size of Screen on Load
+    window.addEventListener('load', function() {
+        if ($(document).width() < 1101) {
+            $slickEl.slick("unslick");
+            console.log("FF "+$(document).width());
+        }
+        else {
+            $slickEl.slick("slick");
+            console.log("ON");
+        }        
+        
     });*/
+    
+    
 
 
 });
