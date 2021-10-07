@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Associates | Wall of Respect </title>
+    <!-- Style Css -->
+    <link rel="stylesheet"    href="../static/Admin Dashboard/Css/style.css"> <!-- vertical-layout-light -->
+    <link rel="stylesheet"    href="../static/Admin Dashboard/Css/material-design-iconic-font.min.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../static/Admin Dashboard/Img/favicon.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <div class="me-3">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button"
+                        data-bs-toggle="minimize">
+                        <span class="mdi mdi-menu menu-icon"></span>
+                    </button>
+                </div>
+                <div>
+                    <img src="../static/Admin Dashboard/Img/TS Logo.svg" width="100%" height="100%" alt="logo" /></a>
+                </div>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-top">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a type="button"
+                            class="mb-1 mt-3 font-weight-medium btn btn-primary btn-rounded btn-fw btn-sm" href="{% url 'Visitor Page' %}" target="_blank">Visitor
+                            Page</a>
+                    </li>
+                    <!-- User Name Icon -->
+                    <li class="nav-item">
+                        <p class="mb-1 mt-3 font-weight-medium">Hi ! {{User_Name}}</p>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="img-xs rounded-circle" src="{{Img_url }}" alt="Profile image"> </a>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                            <div class="dropdown-header text-center">
+                                <img class="img-md rounded-circle" src="{{Img_url }}" width="30%" height="30%"
+                                    alt="Profile image">
+                                <p class="mb-1 mt-3 font-weight-semibold">{{User_Name}}</p>
+                                <p class="fw-light text-muted mb-0">{{Email}}</p>
+                            </div>
+                            <a class="dropdown-item" href="{% url 'Signout' %}"><i
+                                    class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                        </div>
+                    </li>
+                    <!-- Alert -->
+                    {% if messages %}
+                    {% for msg in messages %}
+                    <div class="fixed-top p-3 col-sm-12" id="alert">
+                        <div class="alert {{msg.tags}}"
+                            style="position: absolute;right: 0;display:inline-block;top:20px;margin-right: 1%;"
+                            role="alert">
+                            <i class="ti-info-alt" aria-hidden="true"></i> {{ msg }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-bs-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- NAV BAR -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <!-- Dashboard -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Dashboard' %}"><i
+                                class="mdi mdi-view-dashboard menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <!-- Associates -->
+                    {% if User_access.assc_page == "Yes" %}
+                    <li class="nav-item nav-category">Associates</li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'Associate' %}"><i
+                                class="mdi mdi-human-greeting menu-icon"></i>
+                            <span class="menu-title">Associate's</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    <!-- Campaign -->
+                    {% if User_access.camp_page == "Yes" %}
+                    <li class="nav-item nav-category">Campaign</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Campaign' %}"><i class="mdi mdi-bullhorn menu-icon"></i>
+                            <span class="menu-title">Campaign's</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    <!-- Users -->
+                    {% if User_access.user_page == "Yes" %}
+                    <li class="nav-item nav-category">User</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'User' %}"><i class="mdi mdi-account menu-icon"></i>
+                            <span class="menu-title">User's</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    <!-- Role's -->
+                    {% if User_access.role_page == "Yes" %}
+                    <li class="nav-item nav-category">Role's</li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#Roles" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="mdi mdi-account-card-details menu-icon"></i>
+                            <span class="menu-title">Role's</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="Roles">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="{% url 'Role' %}">Role's</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'Role Access Details' %}">Role's
+                                        Access Details</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-sm-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h4 class="card-title card-title-dash">Associate's</h4>
+                                        </div>
+                                        <div>
+                                            <input type="search" class="search form-control" placeholder="Search Here"
+                                                id="search_input" title="Search here">
+                                        </div>
+                                        {% if User_access.add_assc == "Yes" %}
+                                        <div>
+                                            <button class="btn btn-sm text-white mb-0 me-0" type="button"
+                                                data-toggle="modal" data-target="#add_associate_info"
+                                                style="background-color: #33457c;"><i
+                                                    class="mdi mdi-account-multiple-plus btn-icon"></i> &nbsp; Add new
+                                                member</button>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="table-responsive  mt-1">
+                                        <span id="errmsgnovideos" style="display: none;"></span>
+                                        <table class="table select-table" id="table">
+                                            <thead>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                                <th>Motivational Quote</th>
+                                                <th>Campaign</th>
+                                                <th>Added at</th>
+                                                <th>Added by</th>
+                                                <th>Updated at</th>
+                                                <th>Updated by</th>
+                                                <th>Status</th>
+                                                {% if User_access.edit_assc == "Yes" %}
+                                                <th>Action</th>
+                                                {% endif %}
+                                            </thead>
+                                            <tbody>
+                                                {% for assc in Associates_List %}
+                                                <tr>
+                                                    <td hidden> {{ assc.0 }} </td>
+                                                    <!-- Image / Name / Designation -->
+                                                    <td>
+                                                        <div class="d-flex ">
+                                                            <img src={{ assc.5 }} alt="">
+                                                            <div>
+                                                                <h6>{{ assc.1 }}</h6>
+                                                                <p>{{ assc.2 }}</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <!-- Description -->
+                                                    <td style="max-width: 250px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                                                        {{ assc.3 }} 
+                                                    </td>
+                                                    <!-- Motivational Quote -->
+                                                    <td style="max-width: 250px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                                                        {{ assc.4 }} 
+                                                    </td>
+                                                    <!-- Campaign -->
+                                                    <td> {{ assc.6 }} </td>
+                                                    <!-- Added at / Added by -->
+                                                    <td> {{ assc.8 }} </td>
+                                                    <td> {{ assc.9 }} </td>
+                                                    <!-- Updated at / Updated by -->
+                                                    <td> {{ assc.10 }} </td>
+                                                    <td> {{ assc.11 }} </td>
+                                                    <!-- Status -->
+                                                    <td>
+                                                        {% if assc.7 == '1' %}
+                                                        <div class="badge badge-success">Active</div>
+                                                        {% else %}
+                                                        <div class="badge badge-danger">In Active</div>
+                                                    </td>
+                                                    {% endif %}
+                                                    <!-- Action -->
+                                                    {% if User_access.edit_assc == "Yes" %}
+                                                    <td>
+                                                        <a class="btn btn-outline-secondary btn-rounded btn-icon btn-sm"
+                                                            data-toggle="modal" data-target="#edit_associate_info"><i
+                                                                class="mdi mdi-table-edit btn-icon"></i></a>
+                                                    </td>
+                                                    {% endif %}
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <br>
+                                    <!--<div>
+                                        <nav>
+                                            <ul class="pagination d-flex flex-wrap justify-content-center pagination-success">
+                                                <li class="page-item"><a class="page-link" href="#"><i class="ti-angle-left"></i></a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#"><i class="ti-angle-right"></i></a></li>
+                                            </ul>
+                                            <ul class="pagination d-flex flex-wrap justify-content-center pagination-success">
+                                                <li class="page-item"><a class="page-link" href="#"><i class="ti-angle-left"></i></a></li>
+                                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                                <li class="page-item"><a class="page-link" href="#"><i class="ti-angle-right"></i></a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Developed by M.ROHAN
+                            FAROOQUI <span>&copy;</span>
+                            <a href="https://www.github.com/RohanFarooqui" target="_blank">Github</a>
+                            <a> | </a>
+                            <a href="https://www.youtube.com/RohanFarooqui" target="_blank">Youtube</a>
+                        </span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All
+                            rights reserved.</span>
+                    </div>
+                </footer>
+                <!-- Pre Loader -->
+                <!--<div class="loader-wrapper">
+                    <span class="loader">
+                        <span class="loader-inner">
+                            <div class="dot-opacity-loader">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            </div>
+                        </span>
+                    </span>
+                </div>-->
+
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+
+
+    <!-- Modal -->
+
+    <!-- Add Associate Info-->
+    <div class="modal fade" id="add_associate_info" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Create Associate Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div hidden>
+                            <input type="text" name="type" value="Add_Associate">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="exampleTextarea1">Associate Name :</label>
+                                    <input type="text" class="form-control" placeholder="Name" name="Name"
+                                        maxlength="90" autocomplete="off" pattern="[a-zA-Z][a-zA-Z ]+"
+                                        title="Numbers & Special characters are not allowed ..!!" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleTextarea1">Upload Profile Image :</label>
+                            <input type="file" class="form-control file-upload-browse btn-sm btn-rounded" accept="image/*" name="img" required>
+                            <p class="card-description">Image size : 700x700</p>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <label for="exampleTextarea1">Campaign :</label>
+                                <select class="form-control" name="camp">
+                                    {% for campaign in Campaigns_List %}
+                                    <option value={{ campaign.0 }}>{{ campaign.1}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="exampleTextarea1">Designation :</label>
+                                <input class="form-control" type="text" list="design_list" name="desig" maxlength="90"
+                                    pattern="[a-zA-Z][a-zA-Z ]+"
+                                    title="Numbers & Special characters are not allowed ..!!" required/>
+                                <datalist class="form-control" id="design_list" hidden>
+                                    {% for design in Designation_list %}
+                                    <option>{{ design }}</option>
+                                    {% endfor %}
+                                </datalist>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Description : </label>
+                                <textarea style="border: 1px solid #ced4da;" rows="3" cols="53" name="descrip" maxlength="320"
+                                    required></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Motivational quote :</label>
+                                <textarea style="border: 1px solid #ced4da;" rows="3" cols="53" name="quote" maxlength="320"
+                                    required></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                            <button type="submit" class="btn btn-primary">Add Associate</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update Associate Info -->
+    <div class="modal fade" id="edit_associate_info" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Associate Info</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div hidden>
+                            <input type="text" name="type" value="Update_Associate">
+                            <input type="text" id="update_img" name="img_1">
+                            <input type="text" id="assc_id"    name="assc_id">
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label for="exampleTextarea1">Associate Name :</label>
+                                <input type="text" class="form-control" placeholder="First name" id="update_name"
+                                    name="Name" maxlength="90" autocomplete="off" pattern="[a-zA-Z][a-zA-Z ]+"
+                                    title="Numbers & Special characters are not allowed ..!!" required>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="exampleTextarea1">Image :</label>
+                                <input type="file" class="form-control file-upload-browse btn-sm btn-rounded"
+                                    accept="image/*" name="img">
+                                <p class="card-description">Image size : 700x700</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <label for="exampleTextarea1">Campaign :</label>
+                                <br>
+                                <select class="form-control" id="update_camp" name="camp">
+                                    {% for campaign in Campaigns_List %}
+                                    <option value={{ campaign.0 }}>{{ campaign.1 }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="exampleTextarea1">Designation :</label>
+                                <input class="form-control" type="text" list="design_list" id="update_desig"
+                                    name="desig" maxlength="90" pattern="[a-zA-Z][a-zA-Z ]+"
+                                    title="Numbers & Special characters are not allowed ..!!" />
+                                <datalist class="form-control" id="design_list" hidden>
+                                    {% for design in Designation_list %}
+                                    <option>{{ design }}</option>
+                                    {% endfor %}
+                                </datalist>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <label for="exampleTextarea1">Status :</label>
+                                <br>
+                                <select class="form-control" id="update_status"
+                                    name="status">
+                                    <option value="1">Active</option>
+                                    <option value="0">In Active</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Description : </label>
+                                <textarea style="border: 1px solid #ced4da;" rows="3" cols="48" id="update_descrip"  maxlength="320"
+                                    name="descrip" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Motivational quote :</label>
+                                <textarea style="border: 1px solid #ced4da;" rows="3" cols="48" id="update_quote" maxlength="320"
+                                    name="quote" required></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                            <button type="submit" class="btn btn-primary">Update Associate</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- js for this page -->
+    <script src="../static/Admin Dashboard/Js/vendor.bundle.base.js"></script>
+    <!-- Note : If Remove Right Hamburger button not work in small Resolution -->
+    <script src="../static/Admin Dashboard/Js/off-canvas.js"></script>
+    <!-- Note : If Remove Left Hamburger button not work -->
+    <script src="../static/Admin Dashboard/Js/template.js"></script>
+    <!-- End js for this page -->
+
+    <!---------------- Custome JS ---------------->
+    
+    <!-- BootStrap JS : For Modals -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+    <!-- Time out for alerts shown -->
+    <script src="../static/Admin Dashboard/Js/alert.js"></script>
+    <!-- Load Associate Data in Modal -->
+    <script src="../static/Admin Dashboard/Pages/Associate_Page/edit_associate_info.js"></script>
+    <!-- Search in table -->
+    <script src="../static/Admin Dashboard/Js/Search_Table.js"></script>
+
+</body>
+
+</html>
+  
+  
+    <!----------------------------------------------  NOt in used ----------------------------------------------------->
+
+    <!-- Pagination 
+    <script src="../static/js/my_js/pagiantion_asscociate_table.js"></script>-->
+    <!--  Add Associate : Clear Modal Values before Loading
+    <script src="../static/js/my_js/add_associate_info.js"></script> -->
+
+
+    
+
+    
+
+
+
+
+

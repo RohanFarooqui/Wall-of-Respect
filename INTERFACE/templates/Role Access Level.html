@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Role Access Level | Wall of Respect </title>
+    <!-- Style Css -->
+    <link rel="stylesheet"    href="../static/Admin Dashboard/Css/style.css"> <!-- vertical-layout-light -->
+    <link rel="stylesheet"    href="../static/Admin Dashboard/Css/material-design-iconic-font.min.css">  
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../static/Admin Dashboard/Img/favicon.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:../../partials/_navbar.html -->
+        <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <div class="me-3">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button"
+                        data-bs-toggle="minimize">
+                        <span class="mdi mdi-menu menu-icon"></span>
+                    </button>
+                </div>
+                <div>
+                    <img src="../static/Admin Dashboard/Img/TS Logo.svg" width="100%" height="100%" alt="logo" />
+                </div>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-top">
+                <!--<ul class="navbar-nav">
+                <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+                    <h1 class="welcome-text">Welcome, <span class="text-black fw-bold"><u>Name</u></span></h1>
+                </li>
+                </ul>-->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a type="button"
+                            class="mb-1 mt-3 font-weight-medium btn btn-primary btn-rounded btn-fw btn-sm" href="{% url 'Visitor Page' %}" target="_blank">Visitor
+                            Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <p class="mb-1 mt-3 font-weight-medium">Hi ! {{User_Name}}</p>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="img-xs rounded-circle" src={{Img_url }} alt="Profile image">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                            <div class="dropdown-header text-center">
+                                <img class="img-md rounded-circle" src={{Img_url }} width="30%" height="30%"
+                                    alt="Profile image">
+                                <p class="mb-1 mt-3 font-weight-semibold">{{User_Name}}</p>
+                                <p class="fw-light text-muted mb-0">{{Email}}</p>
+                            </div>
+                            <a class="dropdown-item" href="{% url 'Signout' %}"><i
+                                    class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-bs-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- NAV BAR -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <!-- Dashboard -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{% url 'Dashboard' %}"><i
+                                class="mdi mdi-view-dashboard menu-icon"></i><span
+                                class="menu-title">Dashboard</span></a>
+                    </li>
+                    <!-- Associates -->
+                    {% if User_access.assc_page == "Yes" %}
+                    <li class="nav-item nav-category">Associates</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Associate' %}"><i
+                                class="mdi mdi-human-greeting menu-icon"></i>
+                            <span class="menu-title">Associate's</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    <!-- Campaign -->
+                    {% if User_access.camp_page == "Yes" %}
+                    <li class="nav-item nav-category">Campaign</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Campaign' %}"><i class="mdi mdi-bullhorn menu-icon"></i>
+                            <span class="menu-title">Campaign's</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    <!-- Users -->
+                    {% if User_access.user_page == "Yes" %}
+                    <li class="nav-item nav-category">User</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'User' %}"><i class="mdi mdi-account menu-icon"></i>
+                            <span class="menu-title">User's</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if User_access.role_page == "Yes" %}
+                    <!-- Role's -->
+                    <li class="nav-item nav-category">Role's</li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#Roles" aria-expanded="false"
+                            aria-controls="Roless">
+                            <i class="mdi mdi-account-card-details menu-icon"></i>
+                            <span class="menu-title">Role's</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="Roles">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="{% url 'Role' %}">Role's</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'Role Access Details' %}">Role's
+                                        Access Details</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-sm-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h4 class="card-title card-title-dash">User's Role</h4>
+                                        </div>
+                                        <div>
+                                            <input type="search" class="search form-control" id="search_input"
+                                                placeholder="Search Here" title="Search here">
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive  mt-1">
+                                        <table class="table select-table" id="table">
+                                            <thead>
+                                                <tr align="center">
+                                                    <th rowspan="1">Role</th>
+                                                    <th colspan="4">Page</th>
+                                                    <th colspan="4">Add</th>
+                                                    <th colspan="4">Edit</th>
+                                                </tr>
+                                                <tr align="center">
+                                                    <th class="border-end"></th>
+                                                    <th>User</th>
+                                                    <th>Role</th>
+                                                    <th>Associate</th>
+                                                    <th class="border-end">Campaign</th>
+                                                    <th>User</th>
+                                                    <th>Role</th>
+                                                    <th>Associate</th>
+                                                    <th th class="border-end">Campaign</th>
+                                                    <th>User</th>
+                                                    <th>Role</th>
+                                                    <th>Associate</th>
+                                                    <th>Campaign</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for role in Role_List %}
+                                                <tr>
+                                                    <td class="border-end" style="text-align: center;">{{ role.1 }}</td>
+                                                    <td style="text-align: center;">
+                                                        {% if role.4 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+                                                    <td style="text-align: center;">
+                                                        {% if role.7 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+                                                    <td style="text-align: center;">
+                                                        {% if role.10 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+                                                    <td class="border-end" style="text-align: center;">
+                                                        {% if role.13 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+                                                    <td style="text-align: center;">
+                                                        {% if role.2 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+
+                                                    <td style="text-align: center;">
+                                                        {% if role.5 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+                                                    <td style="text-align: center;">
+                                                        {% if role.8 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+                                                    <td class="border-end" style="text-align: center;">
+                                                        {% if role.11 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+                                                    <td style="text-align: center;">
+                                                        {% if role.3 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+                                                    <td style="text-align: center;">
+                                                        {% if role.6 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+                                                    <td style="text-align: center;">
+                                                        {% if role.9 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+                                                    <td style="text-align: center;">
+                                                        {% if role.12 == 'Yes' %}
+                                                        <div class="badge badge-success">Yes</div>
+                                                        {% else %}
+                                                        <div class="badge badge-danger">No</div>
+                                                    </td>
+                                                    {% endif %}
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Developed by M.ROHAN
+                            FAROOQUI <span>&copy;</span>
+                            <a href="https://www.github.com/RohanFarooqui" target="_blank">Github</a>
+                            <a> | </a>
+                            <a href="https://www.youtube.com/RohanFarooqui" target="_blank">Youtube</a>
+                        </span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All
+                            rights reserved.</span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+
+
+    <!-- js for this page -->
+    <script src="../static/Admin Dashboard/Js/vendor.bundle.base.js"></script>
+    <!-- Note : If Remove Right Hamburger button not work in small Resolution -->
+    <script src="../static/Admin Dashboard/Js/off-canvas.js"></script>
+    <!-- Note : If Remove Left Hamburger button not work -->
+    <script src="../static/Admin Dashboard/Js/template.js"></script>
+    <!-- End js for this page -->
+
+
+    <!-- Search in table -->
+    <script src="../static/Admin Dashboard/Js/Search_Table.js"></script>
+
+</body>
+
+</html>
