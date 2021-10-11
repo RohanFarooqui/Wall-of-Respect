@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-(7q4myj2*odf)yv!ugn)-lqk8s@a*m-csxg8zn11twgk_!2ihf
 
 DEBUG =  True ## Must False when in Build
 
-ALLOWED_HOSTS = ["localhost","127.0.0.1","wall-of-respect"] # Default => ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["localhost","127.0.0.1","wall-of-respect.herokuapp.com"] # Default => ALLOWED_HOSTS = ['*']
 
 
 # Application definition
