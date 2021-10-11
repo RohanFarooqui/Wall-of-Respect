@@ -6,7 +6,7 @@
 import requests
 
 ##=> Variables
-default_api_url = "https://wall-of-respect-api.herokuapp.com"
+default_api_url = "http://127.0.0.1:5000/"#"https://wall-of-respect-api.herokuapp.com"
 headers = {"Content-Type":"application/json"}
 
 ###########################################################-> Login Page <-###########################################################
@@ -19,7 +19,7 @@ def form_verify_credentials(user_name,password):
         ("Password"  , password),
     ]
     resp = requests.post(url,params=params,headers=headers)
-    
+    print(resp)
     if(resp.status_code == 200):
         user_login_details = resp.json()[0]
         return user_login_details
