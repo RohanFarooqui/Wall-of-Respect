@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,10 +28,11 @@ SECRET_KEY = 'django-insecure-(7q4myj2*odf)yv!ugn)-lqk8s@a*m-csxg8zn11twgk_!2ihf
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG =  True ## Must False when in Build
+DEBUG =  False ## True when Debug
 
 ALLOWED_HOSTS = ["localhost","127.0.0.1","wall-of-respect.herokuapp.com"] # Default => ALLOWED_HOSTS = ['*']
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' ## <==== Add when Deploying on Heroku
 
 # Application definition
 
@@ -44,7 +46,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware', ## <==== Add when Deploying on Heroku
 ]
 
 ROOT_URLCONF = 'INTERFACE.urls'

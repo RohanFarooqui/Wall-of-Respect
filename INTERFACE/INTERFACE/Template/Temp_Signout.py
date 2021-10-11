@@ -12,22 +12,33 @@ class Sign_out(View):
                 self.request = request
 
         def Create_Log(self):
-            #-> Creating Log
-            Log_Data_List =[]
-            ID        = str(Session(self.request).Get_Id())
-            User_Name = Session(self.request).Get_Name()
-            Operation = "Logout"
-            Time      = get_date()
-            Date      = get_time()
+                #-> Creating Log
+                Log_Data_List =[]
+                ID        = str(Session(self.request).Get_Id())
+                User_Name = Session(self.request).Get_Name()
+                Operation = "Logout"
+                Time      = get_date()
+                Date      = get_time()
 
-            Log_Data_List.append(ID)
-            Log_Data_List.append(User_Name)
-            Log_Data_List.append(Operation)
-            Log_Data_List.append(Time)
-            Log_Data_List.append(Date)
+                Log_Data_List.append(ID)
+                Log_Data_List.append(User_Name)
+                Log_Data_List.append(Operation)
+                Log_Data_List.append(Time)
+                Log_Data_List.append(Date)
+                ##-> Session Flush
+                del self.request.session['id']
+                del self.request.session['name'] 
+                del self.request.session['user_name']
+                del self.request.session['img']
+                del self.request.session['email']
+                del self.request.session['user_access']
 
-            Save_User_Login_History().Write_message(Log_Data_List)
-            return True
+                self.request.session.clear()
+
+                self.request.session.flush()
+
+                Save_User_Login_History().Write_message(Log_Data_List)
+                return True
                 
 
 

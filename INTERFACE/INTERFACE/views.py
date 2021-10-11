@@ -46,12 +46,12 @@ def dashboard(request):
     if  session_check:
         Dashboard_page = Dashboard(request).Dashbord_Page()
         Dashboard_data = temp_dashboard(request)
-        if Dashboard_page:
+        if (Dashboard_page):
             return render(request,'Dashboard.html',context= Dashboard_data)
         elif(Dashboard_page == "Session Fail"):
             return redirect('/Signout')
         else:
-            return redirect('/Signout')
+            return render('/Dashboard',context= Dashboard_data)
     else:
         return redirect('/')
 
@@ -143,20 +143,7 @@ def role_access_details(request):
 ####################-> Signout  <-####################
 def sign_out(request):
     Sign_out(request).Create_Log()
-    ##-> Session Flush
-    print(request.session)
-    del request.session['id']
-    del request.session['name'] 
-    del request.session['user_name']
-    del request.session['img']
-    del request.session['email']
-    del request.session['user_access']
-
-    request.session.clear()
-
-    request.session.flush()
-
-    return redirect('Index')
+    return redirect('/')
 
 ####################-> Error 404  <-####################
 def error_404_view(request,exception=None):

@@ -13,8 +13,9 @@ class Save_User_Logs_History:
          self.File_name = get_date()+".csv"
 
     def Check_Folder_exist(self):
-        try:
-            if(os.path.exists("Logs\\Crud_Operations")):
+        return True
+        '''try:
+            if(os.path.exists(os.getcwd()+"Logs\\Crud_Operations")):
                 return True
             else:
                 if(os.path.exists("Logs")):
@@ -25,34 +26,37 @@ class Save_User_Logs_History:
                     os.mkdir(os.getcwd()+"\\Logs\\Crud_Operations")
                     return True
         except:
-            pass
+            pass'''
 
     def File_exist(self):
-        if(os.path.isfile("Logs\\Crud_Operations\\"+self.File_name)):
+        return True
+        '''if(os.path.isfile(os.getcwd()+"Logs\\Crud_Operations\\"+self.File_name)):
             return True
         else:
-            return False
+            return False'''
 
     def Create_File_and_Write_Columns(self):
-        try:
+        return True
+        '''try:
             if(self.Check_Folder_exist()):       
                 if not self.File_exist():
                     Columns_Names = ["User_ID","User_Name","Operation Detail","Time","Date"]
-                    with open("Logs\\Crud_Operations\\"+self.File_name, 'w',encoding="utf-8") as f:
+                    with open(os.getcwd()+"Logs\\Crud_Operations\\"+self.File_name, 'w',encoding="utf-8") as f:
                         write = csv.writer(f) 
                         write.writerow( Columns_Names)  
                 return True
         except:
-            pass
+            pass'''
                
     def Write_message(self,msg): 
-        if(self.File_exist()):
-            with open("Logs\\Crud_Operations\\"+self.File_name, 'a',newline='') as f:
+        return True
+        '''if(self.File_exist()):
+            with open(os.getcwd()+"Logs\\Crud_Operations\\"+self.File_name, 'a',newline='') as f:
                 write = csv.writer(f)
                 write.writerow(msg)
                 write.flush()
                 f.close()
         else:
             self.Create_File_and_Write_Columns()
-            self.Write_message(msg)
+            self.Write_message(msg)'''
 
