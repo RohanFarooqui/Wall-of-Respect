@@ -1,0 +1,41 @@
+/********************* Card 4 : Associate Name campaign /department *********************/
+
+
+.card_4{  
+  /*--> Font Settings */
+  letter-spacing : 1px;
+
+  /*--> Card Sizing */
+  max-height     : 18%; /* height: 100px; */
+  width      : 67%; 
+  margin-top : 5%;
+
+  /*--> Card Border */
+  border-radius : 5px;
+  border        : 1px solid whitesmoke;
+  border-image  : linear-gradient(to bottom, whitesmoke, rgba(0, 0, 0, 0)) 1 100%;
+  border-image  : linear-gradient(to left, whitesmoke, rgba(0, 0, 0, 0)) 1 100%;
+ 
+
+  /*--> Card Designing */
+  background-color: rgba(255, 255, 255, 0.06); 
+  -webkit-backdrop-filter : blur(20px);
+  backdrop-filter         : blur(20px);
+  box-shadow              : 0 0 7px #9ecaed;
+
+}
+  
+
+.title_2{
+  font-family: 'Athena Unicode';
+  font-size: 1rem;
+  font-weight: 900;
+   
+}
+
+.title_3{
+  font-family: 'Athena Unicode';
+  font-size: 1rem;
+  font-weight: 900;
+   
+}

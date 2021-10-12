@@ -1,0 +1,36 @@
+.footer {
+    position:absolute; 
+    bottom:5px; 
+    padding-left: 15px;
+    font-size: 1rem;
+    
+    color: #fff;
+    width: 500px;
+    opacity: 0;
+}
+
+.footer:hover{
+    opacity: 1;
+    transition-duration: 1.5s;
+}
+
+
+.creator_name{
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+/*** Github Button : Hover ***/
+.fa-github:hover{
+    color:#171515;
+  }
+  
+  /*** Youtube Button : Hover ***/
+  .fa-youtube:hover{
+      color: #FF0000;
+  }
