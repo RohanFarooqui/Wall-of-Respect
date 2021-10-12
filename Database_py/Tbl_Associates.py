@@ -10,6 +10,7 @@ class table_associates:
 
     # => Add New Associate
     def add_associate(self,name,Desig,Descrip,Moti_Quote,Img_Path,Campaign_id,Added_by):
+        self.db.ping()
         try:
             part_1  = "CALL `Add_Associate` (%s,%s,%s,%s,%s,%s,%s)"
             part_2  = (name,Desig,Descrip,Moti_Quote,Img_Path,Campaign_id,Added_by)
@@ -22,6 +23,7 @@ class table_associates:
     
     # => View Associate's
     def view_associates(self):
+        self.db.ping()
         try:
             part_1 = "call list_Associates()"
             self.cur.execute(part_1)
@@ -33,6 +35,7 @@ class table_associates:
 
     # => Update Associate
     def update_associates(self,name,desig,Descrip,Moti_Quote,Img_path,Campaign_id,Status,Updated_by,assc_id):
+        self.db.ping()
         try:
             query = "CALL `Update_Associate`(%s,%s,%s,%s,%s,%s,%s,%s,%s)"
             param = (name,desig,Descrip,Moti_Quote,Img_path,Campaign_id,Status,Updated_by,assc_id)
