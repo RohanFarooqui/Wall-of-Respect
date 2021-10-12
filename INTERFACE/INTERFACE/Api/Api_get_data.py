@@ -13,8 +13,8 @@ from INTERFACE.Template.Sessions import *
 
 
 
-default_api_url = "http://127.0.0.1:5000/"
-#default_api_url = "https://wall-of-respect-api.herokuapp.com/"
+#default_api_url = "http://127.0.0.1:5000/"
+default_api_url = "https://wall-of-respect-api.herokuapp.com/"
 
 
 ####################-> Dashboard <-####################
