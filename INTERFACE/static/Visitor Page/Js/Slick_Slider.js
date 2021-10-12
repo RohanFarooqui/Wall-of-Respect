@@ -80,7 +80,7 @@ $(document).ready(function () {
         centerPadding: '100px',
         slidesToShow: 9,
         focusOnSelect: true,
-        autoplay:false, /*true*/
+        autoplay:true, 
         autoplaySpeed:6000,
         pauseOnHover: true,
         dots: false,

@@ -7,10 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Roles | Wall of Respect </title>
     <!-- Style Css -->
-    <link rel="stylesheet"    href="../static/Admin_Dashboard/Css/style.css"> <!-- vertical-layout-light -->
-    <link rel="stylesheet"    href="../static/Admin_Dashboard/Css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../static/Admin_Dashboard/Css/style.css"> <!-- vertical-layout-light -->
+    <link rel="stylesheet" href="../static/Admin_Dashboard/Icons/css/themify-icons.css">
     <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css"> <!-- For Tick in Check Box -->
-    <link rel="stylesheet"    href="../static/Admin_Dashboard/Icons/css/themify-icons.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="../static/Admin_Dashboard/Img/favicon.png" />
 </head>
@@ -23,7 +22,7 @@
                 <div class="me-3">
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button"
                         data-bs-toggle="minimize">
-                        <span class="mdi mdi-menu menu-icon"></span>
+                        <i class="ti-menu"></i>
                     </button>
                 </div>
                 <div>
@@ -38,8 +37,8 @@
                 </ul>-->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a type="button"
-                            class="mb-1 mt-3 font-weight-medium btn btn-primary btn-rounded btn-fw btn-sm" href="{% url 'Visitor Page' %}" target="_blank">Visitor
+                        <a type="button" class="mb-1 mt-3 font-weight-medium btn btn-primary btn-rounded btn-fw btn-sm"
+                            href="{% url 'Visitor Page' %}" target="_blank">Visitor
                             Page</a>
                     </li>
                     <li class="nav-item">
@@ -57,7 +56,7 @@
                                 <p class="fw-light text-muted mb-0">{{Email}}</p>
                             </div>
                             <a class="dropdown-item" href="{% url 'Signout' %}"><i
-                                    class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                                    class="dropdown-item-icon ti-power-off text-primary me-2"></i>Sign Out</a>
                         </div>
                     </li>
                     <!-- Alert -->
@@ -75,7 +74,7 @@
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
                     data-bs-toggle="offcanvas">
-                    <span class="mdi mdi-menu"></span>
+                    <i class="ti-menu"></i>
                 </button>
             </div>
         </nav>
@@ -85,15 +84,18 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <!-- Dashboard -->
-                    <li class="nav-item ">
-                        <a class="nav-link" href="{% url 'Dashboard' %}"><i
-                                class="mdi mdi-view-dashboard menu-icon"></i><span class="menu-title">Dashboard</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Dashboard' %}">
+                            <i class="ti-layout-grid2-alt"></i>&nbsp; &nbsp;
+                            <span class="menu-title">Dashboard</span>
+                        </a>
                     </li>
                     <!-- Associates -->
                     {% if User_access.assc_page == "Yes" %}
                     <li class="nav-item nav-category">Associates</li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'Associate' %}"><i class="mdi mdi-human-greeting menu-icon"></i>
+                        <a class="nav-link" href="{% url 'Associate' %}"><i class="ti-headphone-alt"></i>
+                            &nbsp; &nbsp;
                             <span class="menu-title">Associate's</span>
                         </a>
                     </li>
@@ -102,8 +104,8 @@
                     {% if User_access.camp_page == "Yes" %}
                     <li class="nav-item nav-category">Campaign</li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'Campaign' %}"><i
-                                class="mdi mdi-bullhorn menu-icon"></i>
+                        <a class="nav-link" href="{% url 'Campaign' %}"><i class="ti-announcement"></i>
+                            &nbsp; &nbsp;
                             <span class="menu-title">Campaign's</span>
                         </a>
                     </li>
@@ -111,9 +113,9 @@
                     <!-- Users -->
                     {% if User_access.user_page == "Yes" %}
                     <li class="nav-item nav-category">User</li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'User' %}"><i
-                                class="mdi mdi-account menu-icon"></i>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'User' %}"><i class="ti-user"></i>
+                            &nbsp; &nbsp;
                             <span class="menu-title">User's</span>
                         </a>
                     </li>
@@ -124,9 +126,11 @@
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#Roles" aria-expanded="false"
                             aria-controls="Roless">
-                            <i class="mdi mdi-account-card-details menu-icon"></i>
+                            <i class="ti-id-badge"></i>
+                            &nbsp; &nbsp;
                             <span class="menu-title">Role's</span>
-                            <i class="menu-arrow"></i>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="ti-angle-right"></i>
                         </a>
                         <div class="collapse" id="Roles">
                             <ul class="nav flex-column sub-menu">
@@ -151,7 +155,7 @@
                                             <h4 class="card-title card-title-dash">User's Role</h4>
                                         </div>
                                         <div>
-                                            <input type="search" class="search form-control" id="search_input" 
+                                            <input type="search" class="search form-control" id="search_input"
                                                 placeholder="Search Here" title="Search here">
                                         </div>
                                         {% if User_access.add_role == "Yes" %}
@@ -159,7 +163,7 @@
                                             <button class="btn btn-sm text-white mb-0 me-0" type="button"
                                                 data-toggle="modal" data-target="#exampleModalCenter"
                                                 style="background-color: #33457c;" id="btn_add_role">
-                                                <i class="mdi mdi-plus-circle btn-icon"></i>  &nbsp;  Add new Role
+                                                <i class="ti-plus btn-icon"></i> &nbsp; Add new Role
                                             </button>
                                         </div>
                                         {% endif %}
@@ -183,13 +187,13 @@
                                                 {% for role in Role_List %}
                                                 <tr>
                                                     <td hidden>{{ role.0 }}</td>
-                                                    <td >{{ role.1 }}</td>
+                                                    <td>{{ role.1 }}</td>
                                                     <td hidden>{{ role.2 }}</td>
-                                                    <td >{{ role.4 }}</td>
-                                                    <td >{{ role.5 }}</td>
-                                                    <td >{{ role.6 }}</td>
-                                                    <td >{{ role.7 }}</td>
-                                                    <td >
+                                                    <td>{{ role.4 }}</td>
+                                                    <td>{{ role.5 }}</td>
+                                                    <td>{{ role.6 }}</td>
+                                                    <td>{{ role.7 }}</td>
+                                                    <td>
                                                         {% if role.3 == '1' %}
                                                         <div class="badge badge-success">Active</div>
                                                         {% else %}
@@ -198,9 +202,9 @@
                                                     </td>
                                                     {% if User_access.edit_role == "Yes" %}
                                                     <td style="text-align: center;">
-                                                        <a class="btn btn-outline-secondary btn-rounded btn-icon btn-sm" data-toggle="modal"
-                                                            data-target="#edit_role_info" id="btn_edit_role"><i
-                                                                class="mdi mdi-table-edit btn-icon"></i></a>
+                                                        <a class="btn btn-outline-secondary btn-rounded btn-icon btn-sm"
+                                                            data-toggle="modal" data-target="#edit_role_info"
+                                                            id="btn_edit_role"><i class="ti-pencil btn-icon"></i></a>
                                                         <!--<button class="badge badge-danger"><i class="mdi  mdi mdi-delete"></i></button> -->
                                                     </td>
                                                     {% endif %}
@@ -218,15 +222,16 @@
                 <!-- partial:../../partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                      <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Developed by M.ROHAN FAROOQUI <span>&copy;</span>
-                        <a href="https://www.github.com/RohanFarooqui" target="_blank">Github</a> 
-                        <a> | </a>
-                        <a href="https://www.youtube.com/RohanFarooqui" target="_blank">Youtube</a> 
-                      </span>
-                      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All
-                        rights reserved.</span>
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Developed by M.ROHAN
+                            FAROOQUI <span>&copy;</span>
+                            <a href="https://www.github.com/RohanFarooqui" target="_blank">Github</a>
+                            <a> | </a>
+                            <a href="https://www.youtube.com/RohanFarooqui" target="_blank">Youtube</a>
+                        </span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All
+                            rights reserved.</span>
                     </div>
-                  </footer>
+                </footer>
                 <!-- partial -->
             </div>
             <!-- main-panel ends -->
@@ -256,7 +261,8 @@
                                     <label for="exampleTextarea1">Role Name :</label>
                                     <input type="text" class="form-control" placeholder="Role Name" name="roll_name"
                                         maxlength="90" pattern="[a-zA-Z][a-zA-Z ]+"
-                                        title="Numbers & Special characters are not allowed ..!!" required autocomplete="off">
+                                        title="Numbers & Special characters are not allowed ..!!" required
+                                        autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -418,7 +424,8 @@
                                     <label for="exampleTextarea1">Role Name :</label>
                                     <input type="text" class="form-control" placeholder="Role Name" maxlength="90"
                                         id="update_roll_name" name="roll_name" pattern="[a-zA-Z][a-zA-Z ]+"
-                                        title="Numbers & Special characters are not allowed ..!!" required autocomplete="off">
+                                        title="Numbers & Special characters are not allowed ..!!" required
+                                        autocomplete="off">
                                 </div>
                             </div>
                             <div class="form-group col-lg-6">
@@ -574,11 +581,10 @@
     <!-- End js for this page -->
 
     <!---------------- Custome JS ---------------->
-    
+
     <!-- BootStrap JS : For Modals -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
-        crossorigin="anonymous"></script>
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

@@ -92,12 +92,12 @@
       </div>
       <!-- Card 2 : Smoke & Center Card for Associate Image -->
       <div class="col-sm-6">
-          <div class="card_2">
-            <div class="card-body text-center">
-              <img class="featured" id="featured">
-              <img class="smoke" id="smoke" src="../static/Visitor Page/Img/smoke.png">
-            </div>
+        <div class="card_2">
+          <div class="card-body text-center">
+            <img class="featured" id="featured">
+            <img class="smoke" id="smoke" src="../static/Visitor Page/Img/smoke.png">
           </div>
+        </div>
       </div>
       <div class="col-sm-3 ">
         <!-- Card 3 : motivational quote -->
@@ -121,19 +121,19 @@
     <ul class="center">
       {% for assc in Associates_List_1 %}
       <div class="thumbnail">
-          <!-- Associate Image Path-->
-          <img class="get_img_value" id="{{ assc.0 }}" src="{{ assc.5 }}">
-          <!-- Associate Image Caption -->
-          <figcaption class="overlay">{{ assc.1 }}</figcaption>
-          <!-- Assoicate Name -->
-          <p hidden class="{{ assc.0 }} Name">{{ assc.1 }}</p>
-          <!-- Associate Description -->
-          <!-- 382 -->
-          <p hidden class="{{ assc.0 }} Descripton">{{ assc.3 }}</p>
-          <!-- Associate Quote -->
-          <p hidden class="{{ assc.0 }} Quote"> {{ assc.4 }} </p>
-          <!-- Associate Campaign -->
-          <p hidden class="{{ assc.0 }} Campaign">{{ assc.6 }}</p>
+        <!-- Associate Image Path-->
+        <img class="get_img_value" id="{{ assc.0 }}" src="{{ assc.5 }}">
+        <!-- Associate Image Caption -->
+        <figcaption class="overlay">{{ assc.1 }}</figcaption>
+        <!-- Assoicate Name -->
+        <p hidden class="{{ assc.0 }} Name">{{ assc.1 }}</p>
+        <!-- Associate Description -->
+        <!-- 382 -->
+        <p hidden class="{{ assc.0 }} Descripton">{{ assc.3 }}</p>
+        <!-- Associate Quote -->
+        <p hidden class="{{ assc.0 }} Quote"> {{ assc.4 }} </p>
+        <!-- Associate Campaign -->
+        <p hidden class="{{ assc.0 }} Campaign">{{ assc.6 }}</p>
       </div>
       {% endfor %}
     </ul>
@@ -158,6 +158,21 @@
   </div>
   <!-- End of Slick Slider buttons-->
 
+  <!-- Footer -->
+  <footer class="footer">
+    <!--Placed in Main to show white background -->
+    Developed by
+    <span class="creator_name"> M.ROHANFAROOQUI</span>
+    <span>&copy;</span>
+    &nbsp;
+    <a href="https://www.github.com/RohanFarooqui" target="_blank">
+      <i class="fab fa-github fa-lg"></i>
+    </a>
+    <a> | </a>
+    <a href="https://www.youtube.com/RohanFarooqui" target="_blank">
+      <i class="fab fa-youtube fa-lg"></i>
+    </a>
+  </footer>
 
   <!-- BootStrap JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -177,7 +192,7 @@
   <script src="../static/Visitor Page/Js/Slick_Slider.js"></script>
 
 
-  
+
 
 </body>
 

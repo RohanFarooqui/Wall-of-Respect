@@ -8,7 +8,7 @@
   <title>Dashboard | Wall of Respect </title>
   <!-- Style Css -->
   <link rel="stylesheet" href="../static/Admin_Dashboard/Css/style.css"> <!-- vertical-layout-light -->
-  <link rel="stylesheet" href="../static/Admin_Dashboard/Css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="../static//Admin_Dashboard/Icons/css/themify-icons.css">
   <!-- Favicon -->
   <link rel="shortcut icon" href="../static/Admin_Dashboard/Img/favicon.png" />
 </head>
@@ -20,7 +20,7 @@
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div class="me-3">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
-            <span class="mdi mdi-menu menu-icon"></span>
+            <i class="ti-menu"></i>
           </button>
         </div>
         <div>
@@ -35,10 +35,9 @@
           </ul>-->
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a type="button"
-                class="mb-1 mt-3 font-weight-medium btn btn-primary btn-rounded btn-fw btn-sm" href="{% url 'Visitor Page' %}" target="_blank">Visitor
-                Page</a>
-        </li>
+            <a type="button" class="mb-1 mt-3 font-weight-medium btn btn-primary btn-rounded btn-fw btn-sm"
+              href="{% url 'Visitor Page' %}" target="_blank">Visitor Page</a>
+          </li>
           <li class="nav-item">
             <p class="mb-1 mt-3 font-weight-medium">Hi ! {{User_Name}}</p>
           </li>
@@ -52,13 +51,13 @@
                 <p class="fw-light text-muted mb-0">{{Email}}</p>
               </div>
               <a class="dropdown-item" href="{% url 'Signout' %}"><i
-                  class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                  class="dropdown-item-icon ti-power-off text-primary me-2"></i>Sign Out</a>
             </div>
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
           data-bs-toggle="offcanvas">
-          <span class="mdi mdi-menu"></span>
+          <i class="ti-menu"></i>
         </button>
       </div>
     </nav>
@@ -69,14 +68,16 @@
         <ul class="nav">
           <!-- Dashboard -->
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'Dashboard' %}"><i class="mdi mdi-view-dashboard menu-icon"></i><span
-                class="menu-title">Dashboard</span></a>
+            <a class="nav-link" href="{% url 'Dashboard' %}"><i class="ti-layout-grid2-alt"></i>
+              &nbsp; &nbsp;
+              <span class="menu-title"> Dashboard</span></a>
           </li>
           <!-- Associates -->
           {% if User_access.assc_page == "Yes" %}
           <li class="nav-item nav-category">Associates</li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'Associate' %}"><i class="mdi mdi-human-greeting menu-icon"></i>
+            <a class="nav-link" href="{% url 'Associate' %}"><i class="ti-headphone-alt"></i>
+              &nbsp; &nbsp;
               <span class="menu-title">Associate's</span>
             </a>
           </li>
@@ -85,7 +86,8 @@
           {% if User_access.camp_page == "Yes" %}
           <li class="nav-item nav-category">Campaign</li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'Campaign' %}"><i class="mdi mdi-bullhorn menu-icon"></i>
+            <a class="nav-link" href="{% url 'Campaign' %}"><i class="ti-announcement"></i>
+              &nbsp; &nbsp;
               <span class="menu-title">Campaign's</span>
             </a>
           </li>
@@ -94,7 +96,8 @@
           {% if User_access.user_page == "Yes" %}
           <li class="nav-item nav-category">User</li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'User' %}"><i class="mdi mdi-account menu-icon"></i>
+            <a class="nav-link" href="{% url 'User' %}"><i class="ti-user"></i>
+              &nbsp; &nbsp;
               <span class="menu-title">User's</span>
             </a>
           </li>
@@ -105,9 +108,11 @@
           <li class="nav-item nav-category">Role's</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#Roles" aria-expanded="false" aria-controls="Roless">
-              <i class="mdi mdi-account-card-details menu-icon"></i>
+              <i class="ti-id-badge"></i>
+              &nbsp; &nbsp;
               <span class="menu-title">Role's</span>
-              <i class="menu-arrow"></i>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="ti-angle-right"></i>
             </a>
             <div class="collapse" id="Roles">
               <ul class="nav flex-column sub-menu">
@@ -343,7 +348,7 @@
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center">
-                                        <i class="mdi mdi-calendar text-muted me-1"></i>
+                                        <i class="ti-calendar"></i>&nbsp;&nbsp;&nbsp;
                                         <p class="mb-0 text-small text-muted">{{ campaign.3 }}</p>
                                       </div>
                                     </div>
@@ -369,7 +374,7 @@
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center">
-                                        <i class="mdi mdi-calendar text-muted me-1"></i>
+                                        <i class="ti-calendar"></i>&nbsp;&nbsp;&nbsp;
                                         <p class="mb-0 text-small text-muted">{{ roles.4 }}</p>
                                       </div>
                                     </div>
@@ -392,8 +397,9 @@
         <!-- Footer -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Developed by M.ROHAN FAROOQUI <span>&copy;</span>
-              <a href="https://www.github.com/RohanFarooqui" target="_blank">Github</a> 
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Developed by M.ROHAN FAROOQUI
+              <span>&copy;</span>
+              <a href="https://www.github.com/RohanFarooqui" target="_blank">Github</a>
               <a> | </a>
               <a href="https://www.youtube.com/RohanFarooqui" target="_blank">Youtube</a> 
             </span>

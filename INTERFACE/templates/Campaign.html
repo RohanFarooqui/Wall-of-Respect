@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Campaigns | Wall of Respect </title>
     <!-- Style Css -->
-    <link rel="stylesheet"    href="../static/Admin_Dashboard/Css/style.css"> <!-- vertical-layout-light -->
-    <link rel="stylesheet"    href="../static/Admin_Dashboard/Css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../static/Admin_Dashboard/Css/style.css"> <!-- vertical-layout-light -->
+    <link rel="stylesheet" href="../static//Admin_Dashboard/Icons/css/themify-icons.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="../static/Admin_Dashboard/Img/favicon.png" />
 </head>
@@ -21,7 +21,7 @@
                 <div class="me-3">
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button"
                         data-bs-toggle="minimize">
-                        <span class="mdi mdi-menu menu-icon"></span>
+                        <i class="ti-menu"></i>
                     </button>
                 </div>
                 <div>
@@ -31,8 +31,8 @@
             <div class="navbar-menu-wrapper d-flex align-items-top">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a type="button"
-                            class="mb-1 mt-3 font-weight-medium btn btn-primary btn-rounded btn-fw btn-sm" href="{% url 'Visitor Page' %}" target="_blank">Visitor
+                        <a type="button" class="mb-1 mt-3 font-weight-medium btn btn-primary btn-rounded btn-fw btn-sm"
+                            href="{% url 'Visitor Page' %}" target="_blank">Visitor
                             Page</a>
                     </li>
                     <li class="nav-item">
@@ -50,7 +50,7 @@
                                 <p class="fw-light text-muted mb-0">{{Email}}</p>
                             </div>
                             <a class="dropdown-item" href="{% url 'Signout' %}"><i
-                                    class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                                    class="dropdown-item-icon ti-power-off text-primary me-2"></i>Sign Out</a>
                         </div>
                     </li>
                     <!-- Alert -->
@@ -68,7 +68,7 @@
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
                     data-bs-toggle="offcanvas">
-                    <span class="mdi mdi-menu"></span>
+                    <i class="ti-menu"></i>>
                 </button>
             </div>
         </nav>
@@ -79,14 +79,15 @@
                 <ul class="nav">
                     <!-- Dashboard -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'Dashboard' %}"><i
-                                class="mdi mdi-view-dashboard menu-icon"></i><span class="menu-title">Dashboard</span></a>
+                        <a class="nav-link" href="{% url 'Dashboard' %}"><i class="ti-layout-grid2-alt"></i>&nbsp;
+                            &nbsp;<span class="menu-title">Dashboard</span></a>
                     </li>
                     <!-- Associates -->
                     {% if User_access.assc_page == "Yes" %}
                     <li class="nav-item nav-category">Associates</li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'Associate' %}"><i class="mdi mdi-human-greeting menu-icon"></i>
+                        <a class="nav-link" href="{% url 'Associate' %}"><i class="ti-headphone-alt"></i>
+                            &nbsp; &nbsp;
                             <span class="menu-title">Associate's</span>
                         </a>
                     </li>
@@ -95,8 +96,8 @@
                     {% if User_access.camp_page == "Yes" %}
                     <li class="nav-item nav-category">Campaign</li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'Campaign' %}"><i
-                                class="mdi mdi-bullhorn menu-icon"></i>
+                        <a class="nav-link" href="{% url 'Campaign' %}"><i class="ti-announcement"></i>
+                            &nbsp; &nbsp;
                             <span class="menu-title">Campaign's</span>
                         </a>
                     </li>
@@ -105,8 +106,8 @@
                     {% if User_access.user_page == "Yes" %}
                     <li class="nav-item nav-category">User</li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'User' %}"><i
-                                class="mdi mdi-account menu-icon"></i>
+                        <a class="nav-link" href="{% url 'User' %}"><i class="ti-user"></i>
+                            &nbsp; &nbsp;
                             <span class="menu-title">User's</span>
                         </a>
                     </li>
@@ -117,9 +118,11 @@
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#Roles" aria-expanded="false"
                             aria-controls="Roless">
-                            <i class="mdi mdi-account-card-details menu-icon"></i>
+                            <i class="ti-id-badge"></i>
+                            &nbsp; &nbsp;
                             <span class="menu-title">Role's</span>
-                            <i class="menu-arrow"></i>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="ti-angle-right"></i>
                         </a>
                         <div class="collapse" id="Roles">
                             <ul class="nav flex-column sub-menu">
@@ -144,15 +147,15 @@
                                             <h4 class="card-title card-title-dash">Campaigns</h4>
                                         </div>
                                         <div>
-                                            <input type="search" class="search form-control" id="search_input" 
+                                            <input type="search" class="search form-control" id="search_input"
                                                 placeholder="Search Here" title="Search here">
                                         </div>
                                         {% if User_access.add_camp == "Yes" %}
                                         <div>
                                             <button class="btn btn-sm text-white mb-0 me-0" type="button"
                                                 data-toggle="modal" data-target="#exampleModalCenter"
-                                                style="background-color: #33457c;"><i
-                                                    class="mdi mdi-bullhorn btn-icon"></i> &nbsp; Add new campaign</button>
+                                                style="background-color: #33457c;"><i class="ti-plus btn-icon"></i>
+                                                &nbsp; Add new campaign</button>
                                         </div>
                                         {% endif %}
                                     </div>
@@ -189,9 +192,9 @@
                                                     {% endif %}
                                                     {% if User_access.edit_camp == "Yes" %}
                                                     <td>
-                                                        <a class="btn btn-outline-secondary btn-rounded btn-icon btn-sm" data-toggle="modal"
-                                                            data-target="#edit_campaign_info"><i
-                                                                class="mdi mdi-table-edit btn-icon"></i></a>
+                                                        <a class="btn btn-outline-secondary btn-rounded btn-icon btn-sm"
+                                                            data-toggle="modal" data-target="#edit_campaign_info"><i
+                                                                class="ti-pencil btn-icon"></i></a>
                                                         <!--<button class="badge badge-danger"><i class="mdi  mdi mdi-delete"></i></button>-->
                                                     </td>
                                                     {% endif %}
@@ -249,7 +252,8 @@
                             <div class="col-lg-6">
                                 <input type="text" class="form-control" placeholder="Campaign Name" maxlength="90"
                                     name="camp_name" pattern="[a-zA-Z][a-zA-Z ]+"
-                                    title="Numbers & Special characters are not allowed ..!!" required autocomplete="off">
+                                    title="Numbers & Special characters are not allowed ..!!" required
+                                    autocomplete="off">
                             </div>
                         </div>
                         <br>
@@ -315,11 +319,10 @@
     <!-- End js for this page -->
 
     <!---------------- Custome JS ---------------->
-    
+
     <!-- BootStrap JS : For Modals -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
-        crossorigin="anonymous"></script>
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
