@@ -28,3 +28,9 @@
   font-family: 'AntipastoPro Medium trial';
   src: url('../Fonts/Fonts/AntipastoPro-Medium_trial.ttf');
 }
+
+@font-face{
+  font-family: 'Drawing_of_a_New_Day_Regular';
+  src: url('../Fonts/Fonts/DawningofaNewDay-Regular.ttf');
+}
+
