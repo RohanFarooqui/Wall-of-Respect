@@ -11,11 +11,8 @@ from INTERFACE.Template.Sessions import *
 
 ##=> Variables
 
-
-
 #default_api_url = "http://127.0.0.1:5000/"
 default_api_url = "https://wall-of-respect-api.herokuapp.com/"
-
 
 ####################-> Dashboard <-####################
 def temp_dashboard(request):
@@ -39,7 +36,6 @@ def temp_dashboard(request):
         "Recent_Campaigns" : (requests.get(default_api_url + "/v1/campaign")).json()[-5:],
         "Recent_Roles"     : (requests.get(default_api_url + "/v1/role")).json()[-4:],
     }
-
     return context
 
 ####################-> Associate <-####################
