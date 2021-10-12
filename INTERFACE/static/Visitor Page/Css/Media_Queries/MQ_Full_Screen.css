@@ -1,0 +1,54 @@
+
+
+
+
+
+/*Minimum Height : 768 
+@media (height: 768px)   {
+    .featured{
+        max-width: 70%;
+    }
+}*/
+
+/*Minimum Height : 900 
+@media (height: 900px)   {
+    .featured{
+        max-width: 70%;
+    }
+}*/
+
+/*Minimum Height : 1080 */
+ @media (min-height: 1080px){
+    .card-text{
+        
+    }
+    .card_1{
+        height: 550px;  
+        font-size: 1.2rem;
+    }
+    .scroll_1{
+        max-height: 460px;
+    }
+
+    .card_3{
+        height: 350px;
+        font-size: 1.1rem;
+    }
+    .scroll_2{
+        max-height: 270px;
+    }
+    .card_4{
+        height: 100px;
+    }
+
+    .featured{
+        max-width: 70%;
+    }
+
+    .bottom{
+        font-size: 200%;
+    }
+    .container{
+        margin-top: 0.5%;
+    }
+}
