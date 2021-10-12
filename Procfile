@@ -1,1 +1,0 @@
-web: gunicorn INTERFACE.INTERFACE.wsgi --log-file -
