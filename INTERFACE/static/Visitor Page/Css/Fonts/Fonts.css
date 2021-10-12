@@ -1,0 +1,30 @@
+/********************************************************** Fonts ***********************************************************/
+@font-face {
+    font-family: 'Allison Script';  
+    src: url('../Fonts/Fonts/Allison_Script.ttf');  
+  }
+  
+@font-face{
+  font-family: 'Athena Unicode';
+  src: url('../Fonts/Fonts/Athena_Unicode.ttf');
+}
+   
+@font-face{
+  font-family: 'HelvLight Regular';
+  src: url('../Fonts/Fonts/HelvLight_Regular.ttf')
+}
+
+@font-face {
+  font-family: 'OpenSans Bold';
+  src: url('../Fonts/Fonts/OpenSans_Bold.ttf');
+}
+
+@font-face{
+  font-family: 'OpenSans Regular';
+  src: url('../Fonts/Fonts/OpenSans_Regular.ttf');
+}
+
+@font-face{
+  font-family: 'AntipastoPro Medium trial';
+  src: url('../Fonts/Fonts/AntipastoPro-Medium_trial.ttf');
+}

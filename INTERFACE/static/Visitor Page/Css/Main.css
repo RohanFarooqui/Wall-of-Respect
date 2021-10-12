@@ -1,0 +1,82 @@
+/********************* Imports *********************/
+/* --> Fonts */
+@import url(Fonts/Fonts.css);
+
+
+/* --> Preloader */
+@import url(Components/Preloader.css);
+
+/* --> Components */
+
+/* -> Body */
+@import url(Components/Body.css);
+/* -> Navbar */
+@import url(Components/Navbar.css);
+
+/* -> Row */
+@import url(Components/Row.css);
+
+
+/* -> Cards */
+@import url(Components/Card_1.css);
+@import url(Components/Card_2.css);
+@import url(Components/Card_3.css);
+@import url(Components/Card_4.css);
+
+/* Slick Slider */
+@import url(Components/Slick_slider.css);
+
+/* -> Scroll Bar */
+@import url(Components/Scroll_bar.css);
+/* -> Common */
+@import url(Components/Common.css);
+
+/* -> Media Queries */
+@import url(Media_Queries/MQ_Main.css);
+
+/* -> Footer */
+@import url(Components/Footer.css);
+
+
+/*** Bottom "Wall of Respect" Tag with Prev & Next Button ***/
+
+.content-wrapper
+{
+    display: flex;
+    justify-content: center;
+}
+
+.bottom
+{
+    margin-top: 0%;
+    font-size: 150%;
+    color: #fff;
+}
+
+.prev-image , .next-image
+{
+    border-radius: 1px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white; 
+    transition: all 0.3s;
+}
+
+.prev-image :hover::after , .next-image:hover:after
+{
+    background-color: transparent;
+    color: black;
+    border: none;
+    outline: none !important;
+}
+
+.prev-image:focus,.next-image:focus
+{
+  outline: none !important;
+}
+
+.prev-image:active , .next-image:active
+{
+  outline: none !important;
+}
