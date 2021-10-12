@@ -19,7 +19,7 @@
 
 .preloader_logo {
   margin: auto;
-  background: url('/Img/assets/preloader.png') no-repeat center;
+  background: url('../../../../static/Visitor Page/Img/preloader.png') no-repeat center;
   background-size: 280px;
   width: 250px;
   height: 250px;

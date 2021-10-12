@@ -25,17 +25,18 @@
 
 }
   
-
+/* Associate Name */
 .title_2{
   font-family: 'AntipastoPro Medium trial';
-  font-size: 1rem;
+  font-size  : 1vw;
   font-weight: 900;
    
 }
 
+/* Campaign Name */
 .title_3{
   font-family: 'AntipastoPro Medium trial';
-  font-size: 1rem;
+  font-size  : 0.8vw;
   font-weight: 900;
    
 }

@@ -102,15 +102,6 @@ $(document).ready(function () {
                     slidesToShow: 1,
                 }
             },
-            /*{
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
-                }
-            }*/
         ]
     });
 
@@ -135,32 +126,12 @@ $(document).ready(function () {
             id = id+1;
             set_values(id); 
         }
-    }
-
-    //=> Event Listener Check Browser Size Continously
-    /*window.addEventListener("resize", function () {
-        if ($(document).width() < 1100) {
-            $slickEl.slick("unslick");
-            console.log("FF");
-        }
-        else {
-            $slickEl.slick("slick");
-            console.log("ON");
-        }
-    });
-
-    //-> Check Size of Screen on Load
-    window.addEventListener('load', function() {
-        if ($(document).width() < 1101) {
-            $slickEl.slick("unslick");
-            console.log("FF "+$(document).width());
-        }
-        else {
-            $slickEl.slick("slick");
-            console.log("ON");
-        }        
         
-    });*/
+        
+    }
+ 
+
+    
     
     
 

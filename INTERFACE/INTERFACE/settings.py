@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-(7q4myj2*odf)yv!ugn)-lqk8s@a*m-csxg8zn11twgk_!2ihf
 
 DEBUG = False ## True when Debug
 
-ALLOWED_HOSTS = ["localhost","127.0.0.1","wall-of-respect.herokuapp.com"] # Default => ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["localhost","127.0.0.1","192.168.10.3","wall-of-respect.herokuapp.com"] # Default => ALLOWED_HOSTS = ['*']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' ## <==== Add when Deploying on Heroku
 

@@ -4,6 +4,7 @@
 
 .container{
   margin-top: -2%;
+  margin-left: 1%;
   max-width: 95%;
   max-height:10%;
 }
@@ -27,7 +28,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  padding-bottom: 22px;
+  padding-bottom: 20%;
   text-align: center;
   /*--> Sizing */
   width: 100%;
@@ -90,6 +91,7 @@
   
   
 /****** SLICK SLIDER ******/
+
 
 /* Acitve: on left and right of center image */
 .slick-active { 
