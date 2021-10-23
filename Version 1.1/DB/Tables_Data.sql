@@ -1,6 +1,6 @@
-/*============================>  Table Data <============================*/
+-- ============================>  Table Data <============================
 
-/* ====> Role <==== */
+--  ====> Role <==== 
 INSERT INTO `roles` (`ID`, `Name`, `Access_level`, `Status`, `Added_at`, `Added_by`, `Updated_at`, `Updated_by`) VALUES
 (1, 'Admin', '{\"add_user\": \"Yes\", \"edit_user\": \"Yes\", \"user_page\": \"Yes\", \"add_role\": \"Yes\", \"edit_role\": \"Yes\", \"role_page\": \"Yes\", \"add_assc\": \"Yes\", \"edit_assc\": \"Yes\", \"assc_page\": \"Yes\", \"add_camp\": \"Yes\", \"edit_camp\": \"Yes\", \"camp_page\": \"Yes\"}', 1, '2021-08-28', 1, '2021-08-28', 1),
 (2, 'User [Page]', '{\"add_user\": \"No\", \"edit_user\": \"No\", \"user_page\": \"Yes\", \"add_role\": \"No\", \"edit_role\": \"No\", \"role_page\": \"No\", \"add_assc\": \"No\", \"edit_assc\": \"No\", \"assc_page\": \"No\", \"add_camp\": \"No\", \"edit_camp\": \"No\", \"camp_page\": \"No\"}', 1, '2021-08-28', 1, '2021-08-29', 1),
@@ -22,7 +22,7 @@ INSERT INTO `roles` (`ID`, `Name`, `Access_level`, `Status`, `Added_at`, `Added_
 (18, 'View', '{\"add_user\": \"No\", \"edit_user\": \"No\", \"user_page\": \"Yes\", \"add_role\": \"No\", \"edit_role\": \"No\", \"role_page\": \"Yes\", \"add_assc\": \"No\", \"edit_assc\": \"No\", \"assc_page\": \"Yes\", \"add_camp\": \"No\", \"edit_camp\": \"No\", \"camp_page\": \"Yes\"}', 1, '2021-09-12', 1, '2021-09-12', 1);
 
 
-/* ====> Users <==== */
+--  ====> Users <==== 
 INSERT INTO `users` (`ID`, `Name`, `User_name`, `Img_path`, `Email`, `Pswd`, `Status`) VALUES
 (1, 'Admin', 'admin', '/Media/11-09-2021%2018%2500%20PM-Admin.png', 'admin@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 1),
 (2, 'Ali Wajid Raza', 'ali', '/Media/11-09-2021%2017%2558%20PM-Ali%20Wajid%20Raza.png', 'ali.raza@touchstone.com.pk', '81dc9bdb52d04dc20036dbd8313ed055', 1),
@@ -31,7 +31,7 @@ INSERT INTO `users` (`ID`, `Name`, `User_name`, `Img_path`, `Email`, `Pswd`, `St
 (5, 'Mustafeez Rasul', 'mrasul', '/Media/11-09-2021%2019%2508%20PM-Mustafeez%20Rasul.png', 'mrasul@touchstone.com.pk', '81dc9bdb52d04dc20036dbd8313ed055', 1),
 (6, 'Test', 'test', '/Media/12-09-2021%2020%2525%20PM-Test.png', 'test@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 0);
 
-/* ====> Users Logs <==== */
+--  ====> Users Logs <==== 
 INSERT INTO `users_log` (`ID`, `User_name`, `Role`, `Added_at`, `Added_by`, `Updated_at`, `Updated_by`) VALUES
 (1, 'admin', 1, '2021-08-31', 1, '2021-09-11', 1),
 (2, 'ali', 1, '2021-08-31', 1, '2021-09-11', 1),
@@ -40,7 +40,7 @@ INSERT INTO `users_log` (`ID`, `User_name`, `Role`, `Added_at`, `Added_by`, `Upd
 (5, 'mrasul', 1, '2021-09-11', 1, '2021-09-11', 1),
 (6, 'test', 18, '2021-09-12', 1, '2021-09-13', 1);
 
-/* ====> Campaign <==== */
+--  ====> Campaign <==== 
 INSERT INTO `campaign` (`ID`, `Name`, `Status`, `Added_at`, `Added_by`, `Updated_at`, `Updated_by`) VALUES
 (1, 'Solar ', 1, '2021-08-25', 1, '2021-09-12', 1),
 (2, 'Mortgage', 1, '2021-08-25', 1, '2021-09-12', 1),
@@ -55,7 +55,7 @@ INSERT INTO `campaign` (`ID`, `Name`, `Status`, `Added_at`, `Added_by`, `Updated
 (11, 'Training Dept.', 1, '2021-08-25', 1, '2021-08-25', 1),
 (12, 'Admin', 1, '2021-08-25', 1, '2021-08-25', 1);
 
-/* ====> Associates <==== */
+--  ====> Associates <==== 
 INSERT INTO `associates_info` (`ID`, `Name`, `Designation`, `Description`, `moti_quote`, `Img_path`, `Campaign_id`, `Status`, `Added_at`, `Added_by`, `Updated_at`, `Updated_by`) VALUES
 (1, 'MUHAMMAD NAUMAN', 'Not Know', 'It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.', 'It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.It’s not how far you fall, but how high you bounce that counts.', '/Media/25-08-2021%2002%2528%20AM-MUHAMMAD%20.png', 2, 1, '2021-08-25', 1, '2021-09-12', 1),
 (2, 'AMEER HAMZA', 'Not Know', 'Not Know', '   Go an extra mile, it’s never crowded      ', '/Media/25-08-2021%2002%2530%20AM-AMEER%20.png', 1, 1, '2021-08-25', 1, '2021-08-25', 1),

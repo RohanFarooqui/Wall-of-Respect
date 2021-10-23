@@ -3,14 +3,14 @@
 -- Drop Database 
 DROP DATABASE If EXISTS Wall_of_Fame ;
 
-/* => Create DB */
+-- Create Database
 Ceate DATABASE Wall_of_Frame;
 
-/* => Use above created BD */
+-- Use above Created Database
 Use Wall_of_Fame;
 
-/*============================>  Tables <============================*/
-/* => Creating Role Table */
+-- ============================>  Tables <============================
+-- Creating Role Table 
 CREATE TABLE Roles(
     ID            int NOT NULL AUTO_INCREMENT, 
     Name          VARCHAR(100),               
@@ -20,12 +20,12 @@ CREATE TABLE Roles(
     Added_by      INT,
     Updated_at    Date,
     Updated_by    INT,    
-    /* Constraints */
+    -- Constraints 
     PRIMARY KEY(ID),
     UNIQUE(Name)
 );
 
-/* => Creating User Table */
+-- Creating User Table 
 CREATE TABLE Users(
     ID            int NOT NULL AUTO_INCREMENT,
     Name          Varchar(100),  
@@ -34,13 +34,13 @@ CREATE TABLE Users(
     Email         Varchar(30),
     Pswd          CHAR(32),  
     Status        boolean,
-    /* Constraints */
+    -- Constraints
     PRIMARY KEY(ID),
     UNIQUE(User_Name),
     UNIQUE(Email)
 );
 
-/* => Creating User_Log Table */
+-- => Creating User_Log Table 
 Create Table Users_Log(
     ID            int NOT NULL AUTO_INCREMENT,
     User_name     VARCHAR(100), 
@@ -49,7 +49,7 @@ Create Table Users_Log(
     Added_by      INT,
     Updated_at    Date,
     Updated_by    INT, 
-    /* Constraints */
+    -- Constraints
     PRIMARY KEY(ID),
     UNIQUE(User_Name),
     FOREIGN KEY (Role) REFERENCES Roles(ID),
@@ -57,7 +57,7 @@ Create Table Users_Log(
     FOREIGN KEY (Updated_by) REFERENCES  Users(ID)
 );
 
-/* => Creating Campaign Table */
+-- => Creating Campaign Table 
 CREATE TABLE Campaign(
     ID            int NOT NULL AUTO_INCREMENT,
     Name          VARCHAR(255),
@@ -66,12 +66,12 @@ CREATE TABLE Campaign(
     Added_by      INT,
     Updated_at    Date,
     Updated_by    INT,    
-    /* Constraints */
+    -- Constraints 
     PRIMARY KEY(ID),
     UNIQUE(Name)
 );
 
-/* => Creating Associates'Info Table */
+-- => Creating Associates'Info Table 
 CREATE TABLE Associates_info(
     ID            int NOT NULL AUTO_INCREMENT,
     Name          Varchar(100),
@@ -85,7 +85,7 @@ CREATE TABLE Associates_info(
     Added_by      INT,
     Updated_at    Date,
     Updated_by    INT,
-    /* Constraints */
+    -- Constraints 
     PRIMARY KEY (ID),
     FOREIGN KEY (Campaign_id) REFERENCES Campaign(ID),
     FOREIGN KEY (Added_by) REFERENCES Users(ID),
@@ -93,7 +93,7 @@ CREATE TABLE Associates_info(
     UNIQUE(Name)
 );
 
-/* => Alter Commands */
+-- => Alter Commands
 ALTER TABLE Roles AUTO_INCREMENT=1;
 ALTER TABLE Users AUTO_INCREMENT=1;
 ALTER TABLE Users_Log AUTO_INCREMENT=1;
@@ -104,11 +104,11 @@ ALTER TABLE Campaign  ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID);
 ALTER TABLE Roles     ADD FOREIGN KEY (Added_by)   REFERENCES Users(ID); 
 ALTER TABLE Roles     ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID);
 
-/*============================>  Procedures <============================*/
+-- ============================>  Procedures <============================
 
-/**** => Creating Role Procedures <= ****/
+-- => Creating Role Procedures <= ***
 
-/* Add Role */
+-- Add Role 
 DELIMITER $$
 CREATE PROCEDURE Add_Role(
     IN Name           Varchar(100),
@@ -121,7 +121,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-/* Update Role */
+-- Update Role 
 DELIMITER $$
 CREATE PROCEDURE Update_Role ( 
     IN roll_name VARCHAR(100),
@@ -143,7 +143,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-/* View Role */
+-- View Role 
 DELIMITER $$
 CREATE PROCEDURE list_Roll ()
 BEGIN
@@ -159,9 +159,9 @@ END$$
 DELIMITER ;
 
 
-/**** => Creating User Procedures <= ****/
+-- => Creating User Procedures <= ***
 
-/* Add User */
+-- Add User 
 DELIMITER $$
 CREATE PROCEDURE Add_User(
     IN Name       Varchar(100),
@@ -173,52 +173,52 @@ CREATE PROCEDURE Add_User(
     IN Added_by   INT
 )
     BEGIN 
-        /* Insert to Users Table */
+        -- Insert to Users Table 
         INSERT INTO `users`(`Name`, `User_name`, `Img_path`, `Email`, `Pswd`, `Status`) 
             VALUES(Name,User_Name,Img_Path,Email,Pswd,1);
         
-        /* Insert to User Log */
+        -- Insert to User Log 
         INSERT INTO `users_log`(`User_name`, `Role`,`Added_at`, `Added_by`, `Updated_at`, `Updated_by`)
             VALUES(User_Name,Role,current_date(),Added_by,current_date(),Added_by);
 END$$
 DELIMITER ;
 
-/* Update  User */
+-- Update  User 
 
-/* Update  User Account Info */
+-- Update  User Account Info 
 DELIMITER $$
 CREATE PROCEDURE Update_User_Info (
             IN Name  Varchar(100),IN User_name VARCHAR(100),IN Img_Path VARCHAR(100),IN Email Varchar(30),
             IN Role int,IN Status boolean,IN updated_by VARCHAR(100),IN user_id INT)
 BEGIN
-    /* Update to Users Table */
+    -- Update to Users Table 
     UPDATE `users` 
         SET `Name`=Name,`User_name`=user_name,`Img_path`=Img_Path,`Email`=Email,`Status`= Status 
             WHERE `ID` = user_id;
 
-    /* Update to User Log */
+    -- Update to User Log 
     UPDATE `users_log` SET `User_name`=user_name,`Role`=Role,`Updated_at`=current_date(),`Updated_by`=Updated_by
             WHERE `ID` = user_id;
 
 END$$
 DELIMITER ;
 
-/* Update  User Password */
+-- Update  User Password 
 DELIMITER $$
 CREATE PROCEDURE Update_User_Password (IN Pswd CHAR(32),IN updated_by VARCHAR(100),IN user_id INT)
 BEGIN
-    /* Update to Users Table */
+    -- Update to Users Table 
     UPDATE `users` SET `Pswd`=Pswd 
             WHERE `ID` = user_id;
 
-    /* Update to User Log */
+    -- Update to User Log 
     UPDATE `users_log` SET `Updated_by`=Updated_by
             WHERE `ID` = user_id;
 
 END$$
 DELIMITER ;
 
-/* View User */
+-- View User 
 DELIMITER $$
 CREATE PROCEDURE list_User()
 BEGIN 
@@ -244,9 +244,9 @@ BEGIN
 END$$
 DELIMITER ;
 
-/**** => Creating Campaign Procedures <= ****/
+-- *** => Creating Campaign Procedures <= ***
 
-/* Add Campaign */
+-- Add Campaign 
 DELIMITER $$
 CREATE PROCEDURE Add_Campaign (
     IN Name           Varchar(100),
@@ -258,7 +258,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-/* Update Campaign */
+-- Update Campaign 
 DELIMITER $$
 CREATE PROCEDURE Update_Campaign ( 
     IN campaign_name VARCHAR(100),
@@ -280,7 +280,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-/* View Campaign */
+-- View Campaign 
 DELIMITER $$
 CREATE PROCEDURE list_Campaign ()
 BEGIN
@@ -298,9 +298,9 @@ BEGIN
 END$$
 DELIMITER ;
 
-/**** => Creating Associates Procedures <= ****/
+--*** => Creating Associates Procedures <= ***
 
-/* Add Associate */
+-- Add Associate 
 DELIMITER $$
 CREATE PROCEDURE Add_Associate(
     IN Name      Varchar(100),
@@ -318,7 +318,7 @@ CREATE PROCEDURE Add_Associate(
 END$$
 DELIMITER ;
 
-/* Update Associate */
+-- Update Associate 
 DELIMITER $$
 CREATE PROCEDURE Update_Associate (
             IN Name  Varchar(100),IN designation Varchar(100),IN descrip TEXT,IN moti_quote TEXT,
@@ -335,7 +335,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-/* View Associates */
+-- View Associates 
 DELIMITER $$
 CREATE PROCEDURE list_Associates()
 BEGIN 
@@ -360,9 +360,9 @@ END$$
 DELIMITER ;
 
 
-/*============================>  Functions <============================*/.
+--============================>  Functions <============================.
 
-/**** => Verify Login <= ****/
+--*** => Verify Login <= ***
 DROP FUNCTION IF EXISTS `Verify_login`;
 DELIMITER $$
 CREATE FUNCTION `Verify_login` (username varchar(100), password CHAR(32)) RETURNS Boolean
@@ -376,7 +376,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-/**** => Get User details after Verification <= ****/
+--*** => Get User details after Verification <= ***
 DELIMITER $$
 CREATE PROCEDURE  Get_User_Details(IN User_Name  Varchar(100),IN Password CHAR(32))
 BEGIN 
