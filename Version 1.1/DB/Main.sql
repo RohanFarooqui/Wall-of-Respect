@@ -104,7 +104,7 @@ ALTER TABLE Roles     ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID);
 
 -- ============================>  Procedures <============================
 
--- => Creating Role Procedures <= ***
+-- => Creating Role Procedures <=  
 
 -- Add Role 
 DELIMITER $$
