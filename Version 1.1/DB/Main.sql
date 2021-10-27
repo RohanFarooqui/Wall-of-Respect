@@ -116,26 +116,19 @@ END $$;
  
 
 -- Update Role 
-DELIMITER $$
-CREATE PROCEDURE Update_Role ( 
-    IN roll_name VARCHAR(100),
-    IN Access_level Text,
-    IN Status boolean,
-    IN Updated_by INT,
-    IN roll_id INT)
+CREATE PROCEDURE Update_Role (IN Roll_Name VARCHAR(100),IN Roll_Access_level Text,IN Roll_Status boolean,IN Roll_Updated_by INT,IN Roll_ID INT)
+LANGUAGE plpgsql AS $$
 BEGIN
-    UPDATE `roles` 
-        SET `Name`= Roll_Name,`Access_level`=Access_level,`Updated_at`= current_date(),`Status`=Status,`Updated_by`= Updated_by
-            WHERE `ID` = roll_id; 
-
+    UPDATE roles 
+        SET Name=Roll_Name,Access_level=Roll_Access_level,Updated_at=current_date,Status=Roll_Status,Updated_by=Roll_Updated_by
+        WHERE ID = Roll_ID; 
+        
     IF Status = 1 THEN
-        UPDATE `users` INNER JOIN `users_log` ON users.ID = users_log.ID SET users.Status = 1 WHERE users_log.Role =  roll_id; 
+        UPDATE users INNER JOIN users_log ON users.ID = users_log.ID SET users.Status = 1 WHERE users_log.Role = Roll_ID; 
     ELSE 
-         UPDATE `users` INNER JOIN `users_log` ON users.ID = users_log.ID SET users.Status = 0 WHERE users_log.Role =  roll_id; 
-    END IF;
-    
-END$$
-DELIMITER ;
+        UPDATE users INNER JOIN users_log ON users.ID = users_log.ID SET users.Status = 0 WHERE users_log.Role = Roll_ID; 
+    END IF; 
+END $$;
 
 -- View Role 
 DELIMITER $$
