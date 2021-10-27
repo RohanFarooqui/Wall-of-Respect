@@ -1,8 +1,8 @@
 -- Wall of Respect 2.0
+-- Language Postgresql
 
--- Drop Database 
+-- Drop Database IF EXISTS
 DROP DATABASE If EXISTS Wall_of_Fame ;
-
 -- Create Database
 CREATE DATABASE "Wall of Respect"
     WITH 
@@ -10,8 +10,7 @@ CREATE DATABASE "Wall of Respect"
     ENCODING = 'UTF8'
     CONNECTION LIMIT = -1;
 
--- Use above Created Database
---USE Wall_of_Fame;
+-- Use above Created Database USE Wall_of_Fame;
 
 -- ============================>  Tables <============================
 -- Creating Role Table 
@@ -114,7 +113,7 @@ ALTER TABLE Roles     ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID);
 
 -- Add Role 
 DELIMITER $$
-CREATE PROCEDURE Add_Role(
+CREATE or Replace PROCEDURE Add_Role(
     IN Name           Varchar(100),
     IN Access_level   Text,
     IN Added_by       INT
