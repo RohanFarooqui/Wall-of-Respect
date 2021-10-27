@@ -107,17 +107,13 @@ ALTER TABLE Roles     ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID);
 -- => Creating Role Procedures <=  
 
 -- Add Role 
-DELIMITER $$
-CREATE or Replace PROCEDURE Add_Role(
-    IN Name           Varchar(100),
-    IN Access_level   Text,
-    IN Added_by       INT
-)
+CREATE or REPLACE PROCEDURE Add_Role (IN Name Varchar(100),IN Access_level Text,IN Added_by INT)
+LANGUAGE plpgsql AS $$
 BEGIN 
     INSERT INTO roles (Name, Access_level, Status, Added_at, Added_by, Updated_at, Updated_by)
-        VALUES (Name,Access_level,1,current_date(),Added_by,current_date(),Added_by);
-END$$
-DELIMITER ;
+        VALUES (Name,Access_level,1,current_date,Added_by,current_date,Added_by);
+END $$;
+ 
 
 -- Update Role 
 DELIMITER $$
