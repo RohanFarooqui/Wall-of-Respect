@@ -120,7 +120,7 @@ ALTER TABLE Roles     ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID);
 -- => Creating Role Procedures <=  
 
 -- Add Role 
-CREATE or REPLACE PROCEDURE Add_Role (IN Name Varchar(100),IN Access_level Text,IN Added_by INT)
+CREATE PROCEDURE Add_Role (IN Name Varchar(100),IN Access_level Text,IN Added_by INT)
 LANGUAGE plpgsql AS $$
 BEGIN 
     INSERT INTO roles (Name, Access_level, Status, Added_at, Added_by, Updated_at, Updated_by)
@@ -136,10 +136,10 @@ BEGIN
         SET Name=Roll_Name,Access_level=Roll_Access_level,Updated_at=current_date,Status=Roll_Status,Updated_by=Roll_Updated_by
         WHERE ID = Roll_ID; 
         
-    IF Status = 1 THEN
-        UPDATE users INNER JOIN users_log ON users.ID = users_log.ID SET users.Status = 1 WHERE users_log.Role = Roll_ID; 
+    IF Roll_Status = 1 THEN
+        UPDATE Users INNER JOIN Users_Info ON Users.ID = Users_Info.ID SET Users.Status = 1 WHERE Users_Info.Role = Roll_ID; 
     ELSE 
-        UPDATE users INNER JOIN users_log ON users.ID = users_log.ID SET users.Status = 0 WHERE users_log.Role = Roll_ID; 
+        UPDATE Users INNER JOIN Users_Info ON Users.ID = Users_Info.ID SET Users.Status = 0 WHERE Users_Info.Role = Roll_ID; 
     END IF; 
 END $$;
 
