@@ -87,18 +87,27 @@ CREATE TABLE Associates(
     UNIQUE(Name)
 );
 
--- Creating Login_Logs Table
-CREATE TABLE Login_Logs(
-    ID serial NOT NULL,
-    
+-- Creating Authentication_Logs Table
+CREATE TABLE Authentication_Logs(
+    ID           Serial NOT NULL,
+    Operation    Varchar(100),
+    Time         Time NOT NULL,
+    Date         Date NOT NULL,
+    Operation_by INT NOT NULL,
+    -- Constraints
+    PRIMARY KEY(ID)  
 );
 
--- Creating Logout_Logs Table
-CREATE TABLE Login_Logs(
-    ID serial NOT NULL,
-    
-);
 -- Creating Transaction_Logs Table 
+CREATE TABLE Transaction_Logs(
+    ID           Serial NOT NULL,
+    Operation    Varchar(100),
+    Time         Time NOT NULL,
+    Date         Date NOT NULL,
+    Operation_by INT  NOT NULL,
+    -- Constraints
+    PRIMARY KEY(ID)  
+);
 
 -- Alter Commands
 ALTER TABLE Campaigns ADD FOREIGN KEY (Added_by)   REFERENCES Users(ID);  
