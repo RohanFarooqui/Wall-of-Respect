@@ -1,16 +1,7 @@
 -- Wall of Respect 2.0
 -- Language Postgresql
 
--- Drop Database IF EXISTS
-DROP DATABASE If EXISTS Wall_of_Fame ;
--- Create Database
-CREATE DATABASE "Wall of Respect"
-    WITH 
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    CONNECTION LIMIT = -1;
-
--- Use above Created Database USE Wall_of_Fame;
+-- DB name => Wall_of_Respect
 
 -- ============================>  Tables <============================
 -- Creating Role Table 
@@ -43,8 +34,8 @@ CREATE TABLE Users(
     UNIQUE(Email)
 );
 
--- => Creating User_Log Table 
-Create Table Users_Log(
+-- Creating Users_Info Table 
+Create Table Users_Info(
     ID            serial NOT NULL,
     User_name     VARCHAR(100), 
     Role          int NOT NULL,
@@ -55,13 +46,13 @@ Create Table Users_Log(
     -- Constraints
     PRIMARY KEY(ID),
     UNIQUE(User_Name),
-    FOREIGN KEY (Role) REFERENCES Roles(ID),
-    FOREIGN KEY (Added_by) REFERENCES  Users(ID),
-    FOREIGN KEY (Updated_by) REFERENCES  Users(ID)
+    FOREIGN KEY (Role)       REFERENCES Roles(ID),
+    FOREIGN KEY (Added_by)   REFERENCES Users(ID),
+    FOREIGN KEY (Updated_by) REFERENCES Users(ID)
 );
 
--- => Creating Campaign Table 
-CREATE TABLE Campaign(
+-- Creating Campaigns Table 
+CREATE TABLE Campaigns(
     ID            serial NOT NULL,
     Name          VARCHAR(255),
     Status        boolean,
@@ -74,8 +65,8 @@ CREATE TABLE Campaign(
     UNIQUE(Name)
 );
 
--- => Creating Associates'Info Table 
-CREATE TABLE Associates_info(
+-- Creating Associates_Info Table 
+CREATE TABLE Associates(
     ID            serial NOT NULL,
     Name          Varchar(100),
     Designation   Varchar(100),  
@@ -90,15 +81,28 @@ CREATE TABLE Associates_info(
     Updated_by    INT,
     -- Constraints 
     PRIMARY KEY (ID),
-    FOREIGN KEY (Campaign_id) REFERENCES Campaign(ID),
-    FOREIGN KEY (Added_by) REFERENCES Users(ID),
-    FOREIGN KEY (Updated_by) REFERENCES Users(ID),
+    FOREIGN KEY (Campaign_id) REFERENCES Campaigns(ID),
+    FOREIGN KEY (Added_by)    REFERENCES Users(ID),
+    FOREIGN KEY (Updated_by)  REFERENCES Users(ID),
     UNIQUE(Name)
 );
 
--- => Alter Commands
-ALTER TABLE Campaign  ADD FOREIGN KEY (Added_by)   REFERENCES Users(ID);  
-ALTER TABLE Campaign  ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID); 
+-- Creating Login_Logs Table
+CREATE TABLE Login_Logs(
+    ID serial NOT NULL,
+    
+);
+
+-- Creating Logout_Logs Table
+CREATE TABLE Login_Logs(
+    ID serial NOT NULL,
+    
+);
+-- Creating Transaction_Logs Table 
+
+-- Alter Commands
+ALTER TABLE Campaigns ADD FOREIGN KEY (Added_by)   REFERENCES Users(ID);  
+ALTER TABLE Campaigns ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID); 
 ALTER TABLE Roles     ADD FOREIGN KEY (Added_by)   REFERENCES Users(ID); 
 ALTER TABLE Roles     ADD FOREIGN KEY (Updated_by) REFERENCES Users(ID);
 
