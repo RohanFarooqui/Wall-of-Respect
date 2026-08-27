@@ -4,6 +4,10 @@ Wall of Respect is an internship project developed at TouchStone. It provides a 
 
 The visual concept was inspired by [Character Select](https://www.characterselect.com/talent).
 
+### Visitor page
+
+![Wall of Respect visitor page](docs/images/visitor-page.png)
+
 ## Technology
 
 - Flask REST API
@@ -118,6 +122,39 @@ Wall-of-Respect/
 - `GET|POST /v1/campaign` — campaign operations
 - `POST /v1/media` — image upload
 - `GET /media/<path>` — image delivery
+
+
+## Screenshots
+
+Place project screenshots in `docs/images/` using the filenames below. After adding an image, remove the surrounding `<!--` and `-->` to display it in this README.
+
+### Login page
+
+![Wall of Respect login page](docs/images/login-page.png)
+
+### Dashboard
+
+![Wall of Respect dashboard](docs/images/dashboard.png)
+
+### Associates
+
+![Associate management page](docs/images/associates.png)
+
+### Campaigns
+
+![Campaign management page](docs/images/campaigns.png)
+
+### Users
+
+![User management page](docs/images/users.png)
+
+### Roles
+
+![Role management page](docs/images/roles.png)
+
+### Role access details
+
+![Role access details page](docs/images/role-access-details.png)
 
 ## Notes
 
