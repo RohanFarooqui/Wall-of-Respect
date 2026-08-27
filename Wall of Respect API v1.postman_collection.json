@@ -1,0 +1,614 @@
+{
+  "info": {
+    "_postman_id": "1838ae07-c409-4ad1-bf1d-8afbdc038731",
+    "name": "Wall of Respect API v1",
+    "description": "Complete collection for the local Wall of Respect Flask API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32882399"
+  },
+  "item": [
+    {
+      "name": "Status",
+      "item": [
+        {
+          "name": "API Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/login?User_Name=admin&Password=1234",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "User_Name",
+                  "value": "admin"
+                },
+                {
+                  "key": "Password",
+                  "value": "1234"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "List Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/user",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/user?Name=Demo User&User_name=demo&Img_path=&Email=demo@example.com&Pswd=1234&Role=1&Added_by=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "user"
+              ],
+              "query": [
+                {
+                  "key": "Name",
+                  "value": "Demo User"
+                },
+                {
+                  "key": "User_name",
+                  "value": "demo"
+                },
+                {
+                  "key": "Img_path",
+                  "value": ""
+                },
+                {
+                  "key": "Email",
+                  "value": "demo@example.com"
+                },
+                {
+                  "key": "Pswd",
+                  "value": "1234"
+                },
+                {
+                  "key": "Role",
+                  "value": "1"
+                },
+                {
+                  "key": "Added_by",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User Information",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/user?Name=Demo User Updated&User_name=demo&Img_path=&Email=demo@example.com&Role=1&Status=1&Updated_by=1&User_id=2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "user"
+              ],
+              "query": [
+                {
+                  "key": "Name",
+                  "value": "Demo User Updated"
+                },
+                {
+                  "key": "User_name",
+                  "value": "demo"
+                },
+                {
+                  "key": "Img_path",
+                  "value": ""
+                },
+                {
+                  "key": "Email",
+                  "value": "demo@example.com"
+                },
+                {
+                  "key": "Role",
+                  "value": "1"
+                },
+                {
+                  "key": "Status",
+                  "value": "1"
+                },
+                {
+                  "key": "Updated_by",
+                  "value": "1"
+                },
+                {
+                  "key": "User_id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User Password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/user?Pswd=5678&Updated_by=1&User_id=2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "user"
+              ],
+              "query": [
+                {
+                  "key": "Pswd",
+                  "value": "5678"
+                },
+                {
+                  "key": "Updated_by",
+                  "value": "1"
+                },
+                {
+                  "key": "User_id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Roles",
+      "item": [
+        {
+          "name": "List Roles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/role",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "role"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Role",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/role?Role_name=Viewer&Role_access={}&Added_by=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "role"
+              ],
+              "query": [
+                {
+                  "key": "Role_name",
+                  "value": "Viewer"
+                },
+                {
+                  "key": "Role_access",
+                  "value": "{}"
+                },
+                {
+                  "key": "Added_by",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Role",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/role?Role_name=Viewer&Role_access={}&Status=1&Updated_by=1&Roll_id=2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "role"
+              ],
+              "query": [
+                {
+                  "key": "Role_name",
+                  "value": "Viewer"
+                },
+                {
+                  "key": "Role_access",
+                  "value": "{}"
+                },
+                {
+                  "key": "Status",
+                  "value": "1"
+                },
+                {
+                  "key": "Updated_by",
+                  "value": "1"
+                },
+                {
+                  "key": "Roll_id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Campaigns",
+      "item": [
+        {
+          "name": "List Campaigns",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/campaign",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "campaign"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Campaign",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/campaign?Camp_name=Demo Campaign&Added_by=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "campaign"
+              ],
+              "query": [
+                {
+                  "key": "Camp_name",
+                  "value": "Demo Campaign"
+                },
+                {
+                  "key": "Added_by",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Campaign",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/campaign?Camp_name=Demo Campaign Updated&Status=1&Updated_by=1&Camp_Id=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "campaign"
+              ],
+              "query": [
+                {
+                  "key": "Camp_name",
+                  "value": "Demo Campaign Updated"
+                },
+                {
+                  "key": "Status",
+                  "value": "1"
+                },
+                {
+                  "key": "Updated_by",
+                  "value": "1"
+                },
+                {
+                  "key": "Camp_Id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Associates",
+      "item": [
+        {
+          "name": "List Associates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/associate",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "associate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Associate",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/associate?Assc_name=Demo Associate&Desig=Developer&Descrip=Demo description&Quote=Keep learning&Img_path=&Camp=1&Added_by=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "associate"
+              ],
+              "query": [
+                {
+                  "key": "Assc_name",
+                  "value": "Demo Associate"
+                },
+                {
+                  "key": "Desig",
+                  "value": "Developer"
+                },
+                {
+                  "key": "Descrip",
+                  "value": "Demo description"
+                },
+                {
+                  "key": "Quote",
+                  "value": "Keep learning"
+                },
+                {
+                  "key": "Img_path",
+                  "value": ""
+                },
+                {
+                  "key": "Camp",
+                  "value": "1"
+                },
+                {
+                  "key": "Added_by",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Associate",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/associate?Assc_name=Demo Associate&Desig=Senior Developer&Descrip=Updated description&Quote=Keep learning&Img_path=&Camp_id=1&Status=1&Updated_by=1&Assc_id=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "associate"
+              ],
+              "query": [
+                {
+                  "key": "Assc_name",
+                  "value": "Demo Associate"
+                },
+                {
+                  "key": "Desig",
+                  "value": "Senior Developer"
+                },
+                {
+                  "key": "Descrip",
+                  "value": "Updated description"
+                },
+                {
+                  "key": "Quote",
+                  "value": "Keep learning"
+                },
+                {
+                  "key": "Img_path",
+                  "value": ""
+                },
+                {
+                  "key": "Camp_id",
+                  "value": "1"
+                },
+                {
+                  "key": "Status",
+                  "value": "1"
+                },
+                {
+                  "key": "Updated_by",
+                  "value": "1"
+                },
+                {
+                  "key": "Assc_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Totals",
+      "item": [
+        {
+          "name": "Total Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/total-user",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "total-user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Total Roles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/total-role",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "total-role"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Total Associates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/total-associate",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "total-associate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Total Campaigns",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/total-campaign",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "total-campaign"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:5000",
+      "type": "string"
+    }
+  ]
+}
